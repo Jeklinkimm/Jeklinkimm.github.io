@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GemGem EB-1A Reference Board</title>
+  <meta name="description" content="GemGem EB-1A reference letter workflow board">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23172a25'/%3E%3Cpath d='M17 18h30v7H17zm0 11h21v7H17zm0 11h26v7H17z' fill='%23f2c14e'/%3E%3C/svg%3E">
+  <style>
+    :root{--ink:#16221e;--muted:#69746f;--paper:#eef1ee;--surface:#fff;--line:#d9dfdb;--navy:#172a25;--gold:#f2c14e;--blue:#2c6d91;--orange:#b9682d;--green:#2f7554;--gray:#7b8580;--shadow:0 10px 28px rgba(21,38,32,.08)}
+    *{box-sizing:border-box}html,body{margin:0;min-height:100%;background:var(--paper);color:var(--ink);font-family:Inter,"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}button{font:inherit}
+    body{display:flex;flex-direction:column;min-height:100vh;overflow-x:hidden}
+    header{height:64px;flex:0 0 64px;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:0 22px;background:var(--navy);color:#fff;border-bottom:1px solid rgba(255,255,255,.08)}
+    .brand{display:flex;align-items:center;gap:11px;font-weight:800;letter-spacing:-.02em;min-width:0}.mark{width:31px;height:31px;border-radius:9px;background:var(--gold);display:grid;place-items:center;color:var(--navy);font-size:.86rem;flex:0 0 auto}.brand-text{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .lang{display:flex;align-items:center;padding:3px;border:1px solid rgba(255,255,255,.24);border-radius:10px;background:rgba(255,255,255,.06)}.lang button{min-width:45px;border:0;border-radius:7px;padding:6px 10px;background:transparent;color:rgba(255,255,255,.65);font-size:.82rem;font-weight:800;cursor:pointer}.lang button[aria-pressed="true"]{background:#fff;color:var(--navy)}.lang button:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+    main{flex:1;min-height:0;padding:16px;overflow:auto}
+    .board{display:grid;grid-template-columns:repeat(5,minmax(255px,1fr));gap:13px;min-width:1335px;min-height:calc(100vh - 96px)}
+    .lane{display:flex;flex-direction:column;min-width:0;border:1px solid var(--line);border-radius:16px;background:rgba(255,255,255,.55);overflow:hidden}
+    .lane-head{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:15px 15px 13px;border-top:4px solid var(--gray);border-bottom:1px solid var(--line);background:rgba(255,255,255,.76)}.lane[data-lane="mine"] .lane-head{border-top-color:var(--blue)}.lane[data-lane="waiting"] .lane-head{border-top-color:var(--orange)}.lane[data-lane="expedite"] .lane-head{border-top-color:var(--gold)}.lane[data-lane="review"] .lane-head{border-top-color:var(--green)}
+    .lane h2{margin:0 auto 0 0;font-size:.95rem;letter-spacing:-.015em}.owner{display:inline-block;padding:4px 7px;border:1px solid var(--line);border-radius:999px;background:#fff;color:var(--muted);font-size:.66rem;font-weight:800;white-space:nowrap}.count{display:grid;place-items:center;min-width:28px;height:28px;border:1px solid var(--line);border-radius:999px;background:#fff;color:var(--muted);font-size:.76rem;font-weight:800}
+    .card-list{flex:1;min-height:120px;padding:11px;transition:background .15s ease}.card-list.is-over{background:rgba(242,193,78,.12)}
+    .card{position:relative;margin:0 0 10px;padding:14px 14px 13px;background:var(--surface);border:1px solid var(--line);border-radius:13px;box-shadow:0 4px 12px rgba(21,38,32,.045);cursor:grab;user-select:none;transition:transform .15s ease,box-shadow .15s ease,opacity .15s ease,border-color .15s ease}.card:last-child{margin-bottom:0}.card:hover{border-color:#b9c3bd;box-shadow:var(--shadow);transform:translateY(-1px)}.card:active{cursor:grabbing}.card.dragging{opacity:.35;transform:rotate(1deg)}.card:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
+    .grip{position:absolute;right:10px;top:10px;color:#a5ada9;font-size:1rem;letter-spacing:-2px}.card h3{margin:0 24px 7px 0;font-size:.95rem;line-height:1.35;letter-spacing:-.01em}.card p{margin:0;color:var(--muted);font-size:.82rem;line-height:1.48}.next{display:block;margin-top:9px;padding-top:9px;border-top:1px solid #eef1ef;color:var(--ink);font-size:.79rem;line-height:1.45}.tag{display:inline-block;margin-top:9px;padding:4px 8px;border-radius:999px;background:#edf1ee;color:var(--muted);font-size:.69rem;font-weight:800}.tag.now{background:#fff1bd;color:#725719}.quick-link{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:11px;padding:8px 10px;border:1px solid var(--line);border-radius:9px;background:#f7f9f7;color:var(--ink);font-size:.76rem;font-weight:800;text-decoration:none;cursor:pointer;user-select:auto}.quick-link:hover{background:var(--navy);border-color:var(--navy);color:#fff}.quick-link:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+    @media(max-width:700px){header{padding:0 14px}.brand-text{font-size:.9rem}.lang button{min-width:40px;padding:6px 8px}main{padding:11px}.board{grid-template-columns:repeat(5,minmax(82vw,1fr));min-width:calc(410vw + 52px);min-height:calc(100vh - 86px)}}
+    @media(prefers-reduced-motion:reduce){.card,.card-list{transition:none}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand"><span class="mark">G</span><span class="brand-text" data-ko="EB-1A 추천서 진행 보드" data-en="EB-1A Reference Board">EB-1A 추천서 진행 보드</span></div>
+    <div class="lang" aria-label="Language"><button type="button" data-lang="ko" aria-pressed="true">한글</button><button type="button" data-lang="en" aria-pressed="false">EN</button></div>
+  </header>
+  <main>
+    <section class="board" aria-label="Reference letter Kanban board">
+      <section class="lane" data-lane="mine"><div class="lane-head"><h2 data-ko="Jeklin이 지금 할 일" data-en="Jeklin — To do">Jeklin이 지금 할 일</h2><span class="count">4</span></div><div class="card-list">
+        <article class="card" id="yoonsup-choi" draggable="true" tabindex="0"><span class="grip" aria-hidden="true">⠿</span><h3 data-ko="최윤섭 · DHP" data-en="Yoonsup Choi · DHP">최윤섭 · DHP</h3><p data-ko="Slack으로 추천서 검토 가능 여부와 사실관계를 확인." data-en="Confirm willingness to review the letter and verify the facts via Slack.">Slack으로 추천서 검토 가능 여부와 사실관계를 확인.</p><span class="next" data-ko="넘어가는 조건 · 동의 / 영문 직함 / 이메일 / 레터헤드" data-en="Move when · Consent / English title / Email / Letterhead">넘어가는 조건 · 동의 / 영문 직함 / 이메일 / 레터헤드</span></article>
+        <article class="card" id="junjae-byun" draggable="true" tabindex="0"><span class="grip" aria-hidden="true">⠿</span><h3 data-ko="변준재(Jay) · MYSC" data-en="Junjae Byun (Jay) · MYSC">변준재(Jay) · MYSC</h3><p data-ko="카카오톡으로 H-OnDream 선정 과정과 담당 역할을 point form으로 확인." data-en="Verify his role and the H-OnDream selection process in point form via KakaoTalk.">카카오톡으로 H-OnDream 선정 과정과 담당 역할을 point form으로 확인.</p><span class="next" data-ko="넘어가는 조건 · 동의 / 직함·이메일 / 사실 확인" data-en="Move when · Consent / Title and email / Fact check">넘어가는 조건 · 동의 / 직함·이메일 / 사실 확인</span></article>
+        <article class="card" id="yongseop-kim" draggable="true" tabindex="0"><span class="grip" aria-hidden="true">⠿</span><h3 data-ko="김용섭 · University of Utah" data-en="Yongseop Kim · University of Utah">김용섭 · University of Utah</h3><p data-ko="비교 평가를 포함한 추천서 검토·서명 의사와 정확한 직함을 최종 확인." data-en="Confirm willingness to review and sign, including comparative judgment, and verify the exact title.">비교 평가를 포함한 추천서 검토·서명 의사와 정확한 직함을 최종 확인.</p><span class="next" data-ko="넘어가는 조건 · 명시적 동의와 사실 확인" data-en="Move when · Explicit consent and fact check">넘어가는 조건 · 명시적 동의와 사실 확인</span></article>
+        <article class="card" id="jeongtae-kim" draggable="true" tabindex="0"><span class="grip" aria-hidden="true">⠿</span><h3 data-ko="김정태 · MYSC" data-en="Jeongtae Kim · MYSC">김정태 · MYSC</h3><p data-ko="후속 투자와 H-OnDream 맥락은 정리됨. 최윤섭·Jay 다음 순서로 사전 연락." data-en="Follow-on investment and H-OnDream context are documented. Contact after Yoonsup and Jay.">후속 투자와 H-OnDream 맥락은 정리됨. 최윤섭·Jay 다음 순서로 사전 연락.</p><span class="next" data-ko="넘어가는 조건 · 추천서 검토 동의" data-en="Move when · Consent to review the letter">넘어가는 조건 · 추천서 검토 동의</span></article>
+      </div></section>
+      <section class="lane" data-lane="waiting"><div class="lane-head"><h2 data-ko="추천인 회신 대기" data-en="Waiting for referee">추천인 회신 대기</h2><span class="count">3</span></div><div class="card-list">
+        <article class="card" id="kunnan-park" draggable="true" tabindex="0"><span class="grip" aria-hidden="true">⠿</span><h3 data-ko="박근난 · Google Play" data-en="Nina Kunnan Park · Google Play">박근난 · Google Play</h3><p data-ko="창구 Top 3 / TV 광고 / 미국 이머전 트립 / CCS PoC 사실을 전달함." data-en="Shared facts on Changgu Top 3, TV campaign, U.S. immersion trip, and CCS PoC.">창구 Top 3 / TV 광고 / 미국 이머전 트립 / CCS PoC 사실을 전달함.</p><span class="next" data-ko="기다리는 것 · 동의 / 영문 직함 / 공식 표현 / 레터헤드" data-en="Waiting for · Consent / English title / Official wording / Letterhead">기다리는 것 · 동의 / 영문 직함 / 공식 표현 / 레터헤드</span></article>
+        <article class="card" id="soohyun-bae" draggable="true" tabindex="0"><span class="grip" aria-hidden="true">⠿</span><h3 data-ko="배수현 · Cartier Jury" data-en="Soohyun Bae · Cartier Jury">배수현 · Cartier Jury</h3><p data-ko="심사위원 관점의 선정 근거와 13명 임상 등 point form을 전달함." data-en="Shared point-form facts on the jury perspective, selection rationale, and 13-person intervention.">심사위원 관점의 선정 근거와 13명 임상 등 point form을 전달함.</p><span class="next" data-ko="기다리는 것 · 동의와 사실 수정" data-en="Waiting for · Consent and factual corrections">기다리는 것 · 동의와 사실 수정</span></article>
+        <article class="card" id="wonki-kang" draggable="true" tabindex="0"><span class="grip" aria-hidden="true">⠿</span><h3 data-ko="강원기 · 전 MapleStory Director" data-en="Wonki Kang · Former MapleStory Director">강원기 · 전 MapleStory Director</h3><p data-ko="카카오톡 사전 연락 완료. 실제 업무 배정·검토·후속 신뢰를 말할 핵심 추천인." data-en="Initial KakaoTalk outreach sent. Key referee for assignments, review, and continued trust.">카카오톡 사전 연락 완료. 실제 업무 배정·검토·후속 신뢰를 말할 핵심 추천인.</p><span class="next" data-ko="기다리는 것 · 동의와 이메일 주소" data-en="Waiting for · Consent and email address">기다리는 것 · 동의와 이메일 주소</span></article>
+      </div></section>
+      <section class="lane" data-lane="expedite"><div class="lane-head"><h2 data-ko="Expedite 팀 차례" data-en="Expedite — To do">Expedite 팀 차례</h2><span class="count">4</span></div><div class="card-list">
+        <article class="card" id="eunjae-ko" draggable="true" tabindex="0"><span class="grip" aria-hidden="true">⠿</span><h3 data-ko="고은재 교수 추천서 작성" data-en="Draft Eun Jae Ko letter">고은재 교수 추천서 작성</h3><p data-ko="동의, 2022년 첫 만남, 직함, 역할 분리, 91.9% 해석, AI 표현까지 반영 완료." data-en="Consent, 2022 first meeting, title, role separation, 91.9% interpretation, and AI wording are complete.">동의, 2022년 첫 만남, 직함, 역할 분리, 91.9% 해석, AI 표현까지 반영 완료.</p><span class="next" data-ko="팀 액션 · 변호사 영문 초안 작성·수정 후 Jeklin에게 전달" data-en="Team action · Prepare/revise counsel draft and send it to Jeklin">팀 액션 · 변호사 영문 초안 작성·수정 후 Jeklin에게 전달</span><span class="tag now" data-ko="지금 바로 시작 가능" data-en="Ready now">지금 바로 시작 가능</span></article>
+        <article class="card" id="marine-buisson" draggable="true" tabindex="0"><span class="grip" aria-hidden="true">⠿</span><h3 data-ko="Marine Buisson · Cartier 공식 프로그램 측" data-en="Marine Buisson · Cartier program-side letter">Marine Buisson · Cartier 공식 프로그램 측</h3><p data-ko="지원 규모, 5단계 선정 절차, 동아시아 최종 1위를 공식 이메일로 확인함. 수여기관 측 사실증언자로 바로 추천서 초안 작성 가능." data-en="She confirmed the applicant pool, five-stage process, and final East Asia ranking by official email. Counsel can now draft the program-side letter.">지원 규모, 5단계 선정 절차, 동아시아 최종 1위를 공식 이메일로 확인함. 수여기관 측 사실증언자로 바로 추천서 초안 작성 가능.</p><span class="next" data-ko="Expedite 액션 · Award 중심 영문 초안 작성 후 Jeklin에게 전달" data-en="Expedite action · Draft the award-led letter and send it to Jeklin">Expedite 액션 · Award 중심 영문 초안 작성 후 Jeklin에게 전달</span><span class="tag now" data-ko="지금 바로 시작 가능" data-en="Ready now">지금 바로 시작 가능</span></article>
+        <article class="card" id="cartier-strategy" draggable="true" tabindex="0"><span class="grip" aria-hidden="true">⠿</span><h3 data-ko="Cartier 법률 논리 확정" data-en="Finalize Cartier legal framing">Cartier 법률 논리 확정</h3><p data-ko="Soo는 Award 논리가 적절하며, fellowship 가입이 grant 수상에 연동됐다면 같은 논리에 통합할 수 있다고 확인함." data-en="Soo agreed with the award argument and said the fellowship can be integrated if admission was contingent on receiving the grant.">Soo는 Award 논리가 적절하며, fellowship 가입이 grant 수상에 연동됐다면 같은 논리에 통합할 수 있다고 확인함.</p><span class="next" data-ko="Expedite 액션 · Award와 Fellowship의 최종 청원서 구조 확정" data-en="Expedite action · Finalize how Award and Fellowship appear in the petition">Expedite 액션 · Award와 Fellowship의 최종 청원서 구조 확정</span></article>
+        <article class="card" id="bic-strategy" draggable="true" tabindex="0"><span class="grip" aria-hidden="true">⠿</span><h3 data-ko="BIC 추천인 적격성 판단" data-en="Decide BIC referee sufficiency">BIC 추천인 적격성 판단</h3><p data-ko="정구휘 대표는 동료 심사위원이 아니라 운영진. 선정 배경과 실제 심사 역할은 정리 완료." data-en="Kuhui Jeong was an organizer, not a fellow juror. Selection context and judging duties are documented.">정구휘 대표는 동료 심사위원이 아니라 운영진. 선정 배경과 실제 심사 역할은 정리 완료.</p><span class="next" data-ko="팀 액션 · 운영진 추천서로 충분한지, 실제 위촉 주체가 더 필요한지 결정" data-en="Team action · Decide whether an organizer letter is sufficient or an appointing-body letter is needed">팀 액션 · 운영진 추천서로 충분한지, 실제 위촉 주체가 더 필요한지 결정</span></article>
+        <article class="card" id="letter-mix" draggable="true" tabindex="0"><span class="grip" aria-hidden="true">⠿</span><h3 data-ko="최종 추천서 조합 선택" data-en="Select final letter mix">최종 추천서 조합 선택</h3><p data-ko="투자자 후보 3인과 Nexon 후보 2인이 있음. 7장 내 역할 분담 필요." data-en="There are three investor candidates and two Nexon candidates. Define distinct roles within seven letters.">투자자 후보 3인과 Nexon 후보 2인이 있음. 7장 내 역할 분담 필요.</p><span class="next" data-ko="팀 액션 · 투자자 우선순위와 최원준 추가 필요성 확정" data-en="Team action · Rank investor letters and decide whether Wonjun Choi is also needed">팀 액션 · 투자자 우선순위와 최원준 추가 필요성 확정</span></article>
+      </div></section>
+      <section class="lane" data-lane="review"><div class="lane-head"><h2 data-ko="초안 후 검토·서명" data-en="Review & signature">초안 후 검토·서명</h2><span class="count">3</span></div><div class="card-list">
+        <article class="card" id="eunjae-review" draggable="true" tabindex="0"><span class="grip" aria-hidden="true">⠿</span><h3 data-ko="고은재 · 임상 협업" data-en="Eun Jae Ko · Clinical collaboration">고은재 · 임상 협업</h3><p data-ko="Expedite 초안 수령 → Jeklin 사실 검토 → 교수님 전달 → 수정·서명." data-en="Receive Expedite draft → Jeklin fact-checks → Send to professor → Corrections and signature.">Expedite 초안 수령 → Jeklin 사실 검토 → 교수님 전달 → 수정·서명.</p></article>
+        <article class="card" id="yujin-joe" draggable="true" tabindex="0"><span class="grip" aria-hidden="true">⠿</span><h3 data-ko="조유진 · Smilegate" data-en="Yujin Joe · Smilegate">조유진 · Smilegate</h3><p data-ko="일반 TIPS와 Orange Planet 상위 투자 트랙·투자 맥락이 정리됨." data-en="Standard TIPS, Orange Planet's upper investment track, and investment context are documented.">일반 TIPS와 Orange Planet 상위 투자 트랙·투자 맥락이 정리됨.</p><span class="next" data-ko="다음 조건 · Expedite 초안과 레터헤드·서명 방식 확인" data-en="Next · Expedite draft and letterhead/signature format confirmation">다음 조건 · Expedite 초안과 레터헤드·서명 방식 확인</span></article>
+        <article class="card" id="kuhui-jeong" draggable="true" tabindex="0"><span class="grip" aria-hidden="true">⠿</span><h3 data-ko="정구휘 · BIC 운영진" data-en="Kuhui Jeong · BIC organizer">정구휘 · BIC 운영진</h3><p data-ko="한글 point form과 사실 수정 완료. Expedite가 적격성을 승인하면 초안 단계로 이동." data-en="Korean point-form brief and factual corrections are complete. Move once Expedite confirms suitability.">한글 point form과 사실 수정 완료. Expedite가 적격성을 승인하면 초안 단계로 이동.</p></article>
+      </div></section>
+      <section class="lane" data-lane="hold"><div class="lane-head"><h2 data-ko="보류·백업" data-en="Hold & backup">보류·백업</h2><span class="count">3</span></div><div class="card-list">
+        <article class="card" id="juntaek-hong" draggable="true" tabindex="0"><span class="grip" aria-hidden="true">⠿</span><h3 data-ko="홍준택 · Severance" data-en="Juntaek Hong · Severance">홍준택 · Severance</h3><p data-ko="고은재 교수가 가능하므로 현재는 임상 추천서 백업으로 유지." data-en="Keep as a clinical-letter backup while Eun Jae Ko remains available.">고은재 교수가 가능하므로 현재는 임상 추천서 백업으로 유지.</p></article>
+        <article class="card" id="wonjun-choi" draggable="true" tabindex="0"><span class="grip" aria-hidden="true">⠿</span><h3 data-ko="최원준 · Nexon" data-en="Wonjun Choi · Nexon">최원준 · Nexon</h3><p data-ko="강원기가 우선. 퇴사 후 영향처럼 중복되지 않는 사실이 있을 때만 추가." data-en="Wonki Kang is primary. Add only for distinct evidence such as post-departure impact.">강원기가 우선. 퇴사 후 영향처럼 중복되지 않는 사실이 있을 때만 추가.</p></article>
+        <article class="card" id="google-duplicates" draggable="true" tabindex="0"><span class="grip" aria-hidden="true">⠿</span><h3 data-ko="Google 중복 Draft 6개" data-en="Six duplicate Google drafts">Google 중복 Draft 6개</h3><p data-ko="불완전 중복으로 보임. 사용자 확인 전에는 유지." data-en="They appear to be incomplete duplicates. Keep until the user confirms deletion.">불완전 중복으로 보임. 사용자 확인 전에는 유지.</p></article>
+      </div></section>
+    </section>
+  </main>
+  <script>
+    (()=>{
+      const storageKey='gemgem-eb1a-kanban-v2';
+      const langKey='gemgem-eb1a-lang';
+      const lists=[...document.querySelectorAll('.card-list')];
+      let dragged=null;
+      const caseRoot='https://app.expedite.now/d68lgm1wip4yt1uer1lhw8ig/immigration/cases/wcdjsqsji0gphjbk2gl1uzb9';
+      const expediteLinks={
+        'yoonsup-choi':caseRoot+'/prepare/iz71wrbsaud83ifbpbe4b9hf',
+        'junjae-byun':caseRoot+'/prepare/pt2nocg3vjo3e2p6ed739dhn',
+        'yongseop-kim':caseRoot+'/prepare/a01nsv584pe4xj53fikv86t6',
+        'jeongtae-kim':caseRoot+'/prepare/r5teb04aubwooeqrpll04x9b',
+        'kunnan-park':caseRoot+'/prepare/b93t3zz4trkl4zq6pcu2c8t5',
+        'soohyun-bae':caseRoot+'/prepare/t1ae1toso2n1ldfot2379z48',
+        'wonki-kang':caseRoot+'/prepare/tvl21qc3tslyy8pam3myup98/create/referral-letter?draft=ncy3tuf2hyk6rr6quc7kv53x',
+        'eunjae-ko':caseRoot+'/prepare/c5s68ncum6h30l0do8jyjjll',
+        'marine-buisson':caseRoot+'/prepare/m3l2xrrz7nwmdwybfp5yucma',
+        'cartier-strategy':caseRoot+'/prepare/nhdhjyfzzhgj5r98kpd0iy7h',
+        'bic-strategy':caseRoot+'/prepare/yw2vxr81fl21br03cebn52mv',
+        'letter-mix':caseRoot+'/referral-letters',
+        'eunjae-review':caseRoot+'/prepare/c5s68ncum6h30l0do8jyjjll',
+        'yujin-joe':caseRoot+'/prepare/i2oso011b1a70mxt7iva6ewr',
+        'kuhui-jeong':caseRoot+'/prepare/lbeo1h66kfhkn8qfv8wt7p1r',
+        'juntaek-hong':caseRoot+'/prepare/j6afscxhck3x70mt0emqznjv',
+        'wonjun-choi':caseRoot+'/prepare/ygwrn7wc3vjopp0xtj8qdqhu',
+        'google-duplicates':caseRoot+'/prepare/hy7ua3oe592rzunnv6uqlx8q'
+      };
+      const laneOwners={
+        mine:{ko:'담당 · 잼잼',en:'Owner · GemGem'},
+        waiting:{ko:'담당 · 추천인 / 잼잼 추적',en:'Owner · Referee / GemGem follow-up'},
+        expedite:{ko:'담당 · Expedite',en:'Owner · Expedite'},
+        review:{ko:'담당 · 잼잼 → 추천인',en:'Owner · GemGem → Referee'},
+        hold:{ko:'담당 · Expedite 전략 결정',en:'Owner · Expedite strategy'}
+      };
+      function attachOwners(){
+        Object.entries(laneOwners).forEach(([laneId,label])=>{
+          const head=document.querySelector(`[data-lane="${laneId}"] .lane-head`);if(!head)return;
+          const owner=document.createElement('span');owner.className='owner';owner.dataset.ko=label.ko;owner.dataset.en=label.en;owner.textContent=label.ko;head.insertBefore(owner,head.querySelector('.count'));
+        });
+      }
+      function attachLinks(){
+        Object.entries(expediteLinks).forEach(([id,url])=>{
+          const card=document.getElementById(id);if(!card)return;
+          const link=document.createElement('a');link.className='quick-link';link.href=url;link.target='_blank';link.rel='noopener noreferrer';link.draggable=false;link.dataset.ko='Expedite 바로가기  ↗';link.dataset.en='Open in Expedite  ↗';link.textContent=link.dataset.ko;
+          link.addEventListener('mousedown',event=>event.stopPropagation());link.addEventListener('dragstart',event=>event.stopPropagation());card.appendChild(link);
+        });
+      }
+      function updateCounts(){document.querySelectorAll('.lane').forEach(lane=>{lane.querySelector('.count').textContent=lane.querySelectorAll('.card').length})}
+      function saveBoard(){const state={};document.querySelectorAll('.lane').forEach(lane=>{state[lane.dataset.lane]=[...lane.querySelectorAll('.card')].map(card=>card.id)});localStorage.setItem(storageKey,JSON.stringify(state))}
+      function restoreBoard(){try{const state=JSON.parse(localStorage.getItem(storageKey)||'null');if(!state)return;Object.entries(state).forEach(([laneId,ids])=>{const list=document.querySelector(`[data-lane="${laneId}"] .card-list`);if(!list||!Array.isArray(ids))return;ids.forEach(id=>{const card=document.getElementById(id);if(card)list.appendChild(card)})})}catch(_){localStorage.removeItem(storageKey)}}
+      function setLanguage(lang){document.documentElement.lang=lang;document.querySelectorAll('[data-ko][data-en]').forEach(el=>{el.textContent=el.dataset[lang]});document.querySelectorAll('.lang button').forEach(btn=>btn.setAttribute('aria-pressed',String(btn.dataset.lang===lang)));localStorage.setItem(langKey,lang)}
+      function insertBeforeFromPoint(list,y){const cards=[...list.querySelectorAll('.card:not(.dragging)')];return cards.reduce((closest,card)=>{const box=card.getBoundingClientRect();const offset=y-box.top-box.height/2;return offset<0&&offset>closest.offset?{offset,element:card}:closest},{offset:Number.NEGATIVE_INFINITY,element:null}).element}
+      attachOwners();attachLinks();restoreBoard();updateCounts();setLanguage(localStorage.getItem(langKey)==='en'?'en':'ko');
+      document.querySelectorAll('.lang button').forEach(btn=>btn.addEventListener('click',()=>setLanguage(btn.dataset.lang)));
+      document.querySelectorAll('.card').forEach(card=>{
+        card.addEventListener('dragstart',event=>{if(event.target.closest('.quick-link')){event.preventDefault();return}dragged=card;card.classList.add('dragging');event.dataTransfer.effectAllowed='move';event.dataTransfer.setData('text/plain',card.id)});
+        card.addEventListener('dragend',()=>{card.classList.remove('dragging');dragged=null;lists.forEach(list=>list.classList.remove('is-over'));updateCounts();saveBoard()});
+      });
+      lists.forEach(list=>{
+        list.addEventListener('dragover',event=>{event.preventDefault();if(!dragged)return;list.classList.add('is-over');const before=insertBeforeFromPoint(list,event.clientY);if(before)list.insertBefore(dragged,before);else list.appendChild(dragged);updateCounts()});
+        list.addEventListener('dragleave',event=>{if(!list.contains(event.relatedTarget))list.classList.remove('is-over')});
+        list.addEventListener('drop',event=>{event.preventDefault();list.classList.remove('is-over');updateCounts();saveBoard()});
+      });
+    })();
+  </script>
+</body>
+</html>
