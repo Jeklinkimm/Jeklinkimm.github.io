@@ -96,6 +96,36 @@
       const storageKey='gemgem-eb1a-kanban-v28';
       const langKey='gemgem-eb1a-lang';
       const lists=[...document.querySelectorAll('.card-list')];
+      // Verified in Expedite before publication; keep the user's saved card order.
+      const sourceUpdates20261013={
+        'doc-d09':{
+          ko:'10월 13일 / 매체 공식 소개 원본과 창구 기사 원문 PDF 추가 저장 / Complete 확인. 인터넷신문 등록과 스타트업 전문 매체 성격 확인 / 독자 규모는 미확인으로 Expedite의 Needs follow-up 유지. 기존 굿게임상 원문 PDF는 상위 폴더에 보존. 본인 관련성 / 인증 번역 / 매체 충분성은 최종 검토 필요.',
+          en:'October 13 / Official publisher profile and Changgu original PDF saved / Complete verified. Newspaper registration and startup-trade focus established; audience reach unverified / Expedite Needs follow-up retained. Existing Good Game Award original PDF preserved in the parent folder. Applicant relevance, certified translation and outlet sufficiency remain open.',
+          nextKo:'Codex / 날짜가 있는 독자 규모 근거 조사. Expedite / 매체 충분성과 본인 관련성 판단 / 번역 범위 결정',
+          nextEn:'Codex / Research dated audience evidence. Expedite / Assess outlet sufficiency and applicant relevance / Specify translation scope'
+        },
+        'doc-d15':{
+          ko:'10월 13일 / 넥슨 2023년 실적 발표 원본 51쪽 추가 업로드 / Complete와 재조회 확인. 기존 2024년 실적 보도자료와 중복 아님. 메이플 20년차 성과와 회사 규모는 배경 근거 / 개인 윌/진힐라 기여 및 회사별 경력 증거와 분리. 직급 번역과 중복 레터 요청은 검토 필요.',
+          en:'October 13 / Full 51-page Nexon FY2023 investor presentation uploaded / Complete and persistence verified. Distinct from the existing FY2024 release. MapleStory longevity and corporate scale are context, separate from personal Will/Verus Hilla contributions and employer-specific records. Title translation and overlapping letter requests need review.'
+        },
+        'grace-park':{
+          ko:'10월 13일 이메일 확인 / 세 항목의 구체 답변은 아직 미수신. 10월 9일 도유선의 확인 예정 답변과 괄호 3개 유지 / Expedite AWE 폴더에 저장. 이번에는 카카오톡 신규 답변을 확인한 것은 아님.',
+          en:'October 13 email check / No substantive answers to the three items found. October 9 acknowledgement and three placeholders retained / Saved in Expedite AWE. This update does not claim a fresh KakaoTalk check.',
+          append:true
+        },
+        'kunnan-park':{
+          ko:'10월 13일 이메일 재확인 / 운영기관 공문과 지원 규모/실명 패널 답변은 아직 미수신. 기존 직함 확인은 완료 상태 유지 / Expedite 창구 폴더에 대기 사항 저장. 새 문의나 리마인드 발송 없음.',
+          en:'October 13 email recheck / Operator certification and applicant-count/named-panel replies still pending. Existing title confirmation retained / Waiting status saved in Expedite Changgu. No new inquiry or reminder sent.',
+          append:true
+        }
+      };
+      for(const [id,update] of Object.entries(sourceUpdates20261013)){
+        const card=document.getElementById(id);
+        const text=update.append?document.createElement('p'):card.querySelector('p');
+        text.dataset.ko=update.ko; text.dataset.en=update.en; text.textContent=update.ko;
+        if(update.append) card.append(text);
+        if(update.nextKo){const next=card.querySelector('.next');next.dataset.ko=update.nextKo;next.dataset.en=update.nextEn;next.textContent=update.nextKo;}
+      }
       let dragged=null;
       const caseRoot='https://app.expedite.now/d68lgm1wip4yt1uer1lhw8ig/immigration/cases/wcdjsqsji0gphjbk2gl1uzb9';
       const expediteLinks={
@@ -107,13 +137,13 @@
         'doc-d06':caseRoot+'/prepare/jlct88hua69pe51hlfj0mc04',
         'doc-d07':caseRoot+'/prepare/djlzp2ype67xhcisbv7f64m6',
         'doc-d08':caseRoot+'/prepare/ctb0i0qlt9oltpc4mvp8dp4t',
-        'doc-d09':caseRoot+'/prepare/g0jmwqntbtfwk1cwrlagr890',
+        'doc-d09':caseRoot+'/prepare/t84ufj0ubmrdi3o7p886hcoje',
         'doc-d10':caseRoot+'/prepare/g0jmwqntbtfwk1cwrlagr890',
         'doc-d11':caseRoot+'/prepare/yw2vxr81fl21br03cebn52mv',
         'doc-d12':caseRoot+'/prepare/m25iwk22e8hu11taldpkdgsg',
         'doc-d13':caseRoot+'/prepare/m25iwk22e8hu11taldpkdgsg',
         'doc-d14':caseRoot+'/prepare/ifi5put7sd6hg2qapdfuclnx',
-        'doc-d15':caseRoot+'/prepare/ygwrn7wc3vjopp0xtj8qdqhu',
+        'doc-d15':caseRoot+'/prepare/tvl21qc3tslyy8pam3myup98',
         'doc-d16':caseRoot+'/prepare/m25iwk22e8hu11taldpkdgsg',
         'doc-d17':caseRoot+'/prepare/m25iwk22e8hu11taldpkdgsg',
         'doc-d18':caseRoot+'/prepare/m25iwk22e8hu11taldpkdgsg',
