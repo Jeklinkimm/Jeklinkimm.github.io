@@ -98,6 +98,22 @@
       const lists=[...document.querySelectorAll('.card-list')];
       // Verified in Expedite before publication; keep the user's saved card order.
       const sourceUpdates20261013={
+        'changgu-ranking-document':{
+          titleKo:'창구 / 최우수 공문과 Google 인정 구분',titleEn:'Changgu / Final grade vs Google recognition',
+          ko:'10월 13일 넥스트챌린지 회신 수신 / 최종점검 적정/최종평가 최우수 공문 확보 및 Expedite 첨부 확인. 정부 사업은 기업별 점수를 산출하지만 기업 간 공식 순위를 정하지 않음. Top3/Top10은 Google 자체 기준이며 정부 공식 순위와 구분. 1위 확인서가 아님.',
+          en:'October 13 operator reply received / Official appropriate inspection and 최우수 final-grade letter attached in Expedite. Government selection computes scores but does not rank participating firms. Top3/Top10 are Google-internal recognition, not government-program rankings. This is not a first-place certificate.',
+          nextKo:'Expedite / 정부 최우수 등급과 Google 선정 인정을 분리해 문안 검토 / 1위 공문 대기 종료',
+          nextEn:'Expedite / Separate government completion grade from Google recognition in wording / End first-place-certificate waiting task',
+          tagKo:'최우수 공문 확보 / 법률 검토',tagEn:'Official grade letter obtained / Counsel review',replaceAllParagraphs:true
+        },
+        'changgu-followup-review':{
+          titleKo:'창구 / 기관 회신 범위와 다음 판단',titleEn:'Changgu / Operator reply scope and next decision',
+          ko:'기관이 네 항목에 회신함. 전체 지원자/단계별 규모는 비공개 / 본인 기업의 점수/평가의견만 제공 가능. 위원단은 창진원 등록 풀에서 시스템 추첨 / 실명/인원/전문분야는 미제공. 자료를 임의로 채우지 않음. 기존 매출 자료 확보 상태는 유지.',
+          en:'Operator answered all four questions. Applicant/stage counts are nonpublic / Only the requesting company’s own scores and evaluation comments may be supplied. Panel drawn by system from KISED-approved pool / No actual names, counts or specialties supplied. Do not invent details. Existing revenue evidence retained.',
+          nextKo:'Expedite / 비공개 수치/패널 상세의 생략 여부 결정. 잼잼 / 필요시 본인 점수/평가의견 추가 요청 검토 / 신규 문의 미발송',
+          nextEn:'Expedite / Decide omission of nonpublic counts and panel detail. GemGem / Consider own-score/comment request only if useful / No new outreach sent',
+          tagKo:'회신 확보 / 추가 문의 필요성 검토',tagEn:'Reply obtained / Assess follow-up need',replaceAllParagraphs:true
+        },
         'doc-d16':{
           ko:'10월 13일 기존 메일 재조사 / 별도 유타 IRB 승인 통지서는 아직 미확보. 업로드된 신청/프로토콜은 승인서와 구분 / 미확보가 승인 부재를 뜻하지 않음.',
           en:'October 13 email follow-up / Separate Utah IRB approval notice still unlocated. Uploaded application/protocol is not approval evidence / Unlocated does not mean unapproved.',
@@ -136,7 +152,7 @@
         'doc-d22':{
           ko:'10월 13일 / 주장 → 실제 파일과 페이지 → 본인 귀속과 한계 → 남은 검토를 연결한 3쪽 증거 인덱스 업로드 / Complete 확인. CV / 회사 역할 / 특허 / 메이플 / CCS / 논문과 기존 증거를 연결. 체크리스트 완료나 접수 준비 완료를 뜻하지 않음.',
           en:'October 13 / Three-page claim-to-source index uploaded / Complete verified. Maps actual files/pages, personal attribution, boundaries and remaining review across CV, company role, patent, MapleStory, CCS, article and existing evidence. Not checklist completion or filing readiness.',
-          nextKo:'Expedite / 증거 채택과 인증 번역 / 최종 레터 및 폼 대조 / 조건부·중복 요청 정리',
+          nextKo:'Expedite / 증거 채택과 인증 번역 / 최종 레터 및 폼 대조 / 조건부/중복 요청 정리',
           nextEn:'Expedite / Select exhibits and certified translations / Reconcile final letters/forms / Resolve conditional and duplicate requests',
           tagKo:'증거 연결표 확보 / 변호사 조립',tagEn:'Evidence index supplied / Counsel assembly'
         },
@@ -147,9 +163,9 @@
           nextEn:'Codex / Research dated audience evidence. Expedite / Assess outlet sufficiency and applicant relevance / Specify translation scope'
         },
         'doc-d12':{
-          ko:'10월 13일 / 기존 기술설명 MD와 4쪽 미서명 검토용 PDF 업로드 / Complete 및 재조회 확인. 논문에 명시된 자금 확보 / 자원 / 소프트웨어 / 원고 검토 기여를 보강. 개인 제품 설계와 개발팀 구현 / 임상팀 평가를 분리. 아직 본인 승인·서명 또는 최종 제출본이 아님.',
+          ko:'10월 13일 / 기존 기술설명 MD와 4쪽 미서명 검토용 PDF 업로드 / Complete 및 재조회 확인. 논문에 명시된 자금 확보 / 자원 / 소프트웨어 / 원고 검토 기여를 보강. 개인 제품 설계와 개발팀 구현 / 임상팀 평가를 분리. 아직 본인 승인/서명 또는 최종 제출본이 아님.',
           en:'October 13 / Technical source MD and four-page unsigned review PDF uploaded / Complete and persistence verified. Added published funding/resources/software/manuscript-review credits. Product design remains distinct from developer implementation and clinical-team evaluation. Not applicant-approved/signed or a final filing statement.',
-          nextKo:'잼잼 본인 / 담당 범위 최종 사실 검토. Expedite / 본인 진술서 필요성과 형식 / 기술·임상 주장 최종화',
+          nextKo:'잼잼 본인 / 담당 범위 최종 사실 검토. Expedite / 본인 진술서 필요성과 형식 / 기술/임상 주장 최종화',
           nextEn:'Applicant / Final factual review of role boundaries. Expedite / Decide declaration need/format and finalize technical/clinical wording'
         },
         'doc-d14':{
@@ -160,7 +176,7 @@
           tagKo:'최신 주주/등기 확보 / 조직도 인터뷰',tagEn:'Latest corporate records obtained / Org interview'
         },
         'doc-d19':{
-          ko:'10월 13일 / 논문 PubMed 기록 / NLM 학술지 MEDLINE 등재 / 출판사 공식 학술지 지표 화면 3건 첨부 / Complete 확인. DOI·출판일·다섯 번째 공동저자와 원문 기여 표기 연결. 동일 논문을 중복 성과로 계산하거나 학술지 지표를 본인 인용·임상효능으로 쓰지 않음.',
+          ko:'10월 13일 / 논문 PubMed 기록 / NLM 학술지 MEDLINE 등재 / 출판사 공식 학술지 지표 화면 3건 첨부 / Complete 확인. DOI/출판일/다섯 번째 공동저자와 원문 기여 표기 연결. 동일 논문을 중복 성과로 계산하거나 학술지 지표를 본인 인용/임상효능으로 쓰지 않음.',
           en:'October 13 / PubMed article record, NLM MEDLINE journal record and publisher metrics / Three captures attached / Complete verified. Mapped DOI/date/fifth coauthor and printed contribution credits. Same paper counted once; journal metrics are not personal citations or clinical efficacy.',
           nextKo:'Expedite / 학술저자 증거 최종 연결 / 개인 기여와 학술지 배경을 분리해 채택',
           nextEn:'Expedite / Finalize authorship mapping / Separate personal contributions from journal background'
@@ -177,17 +193,21 @@
           append:true
         },
         'kunnan-park':{
-          ko:'10월 13일 이메일 재확인 / 운영기관 공문과 지원 규모/실명 패널 답변은 아직 미수신. 기존 직함 확인 유지. CCS는 본인이 하루 사용 후 중단했다고 정정 / 장기 PoC/지속적 기관 도입 문안은 수정 필요. 데모 사진 확보 후 범위 검토 / 새 문의 발송 없음.',
-          en:'October 13 email recheck / Operator certification and applicant-count/named-panel replies pending. Existing title verification retained. Applicant corrects CCS to one day of use, then stopped / Revise extended-PoC and sustained-adoption wording. Demo photos pending / No new outreach sent.',
-          append:true
+          ko:'개인 자격 추천 / Google 공식 로고/레터헤드 불가 / Product Marketing Manager 확인 유지. 10월 13일 기관 회신과 최우수 종료평가 공문 확보. 정부 공식 순위는 없고 Top3/Top10은 Google 자체 기준 / Google 최고평가 공개 자료와 별도 구분. 지원 규모는 비공개 / 실명 패널 미제공. 매출은 증빙의 약7.16배 유지. CCS는 하루 사용 후 중단 / 데모 사진 대기.',
+          en:'Personal-capacity recommendation / No Google official logo or letterhead / Product Marketing Manager confirmed. October 13 reply and official completion-grade letter obtained. No government ranking; Top3/Top10 are Google-internal recognition / Keep separate from Google highest-rated publication. Counts nonpublic / Named panel not supplied. Evidenced revenue ratio remains about7.16. CCS one-day use then stopped / Demo photos pending.',
+          nextKo:'Expedite / Google 인정과 정부 최우수 등급 구분 / 비공개 확인 항목은 축소/생략 여부 판단 / CCS 하루 사용으로 문안 검토',
+          nextEn:'Expedite / Separate Google recognition and government completion grade / Decide narrowing or omission of nonpublic gaps / Align CCS wording with one-day use',
+          tagKo:'기관 회신/공문 확보 / 최종 검토',tagEn:'Operator reply and official letter obtained / Final review',replaceAllParagraphs:true
         }
       };
       for(const [id,update] of Object.entries(sourceUpdates20261013)){
         const card=document.getElementById(id);
         const text=update.append?document.createElement('p'):card.querySelector('p');
         text.dataset.ko=update.ko; text.dataset.en=update.en; text.textContent=update.ko;
+        if(update.replaceAllParagraphs) card.querySelectorAll('p').forEach(p=>{if(p!==text)p.remove()});
+        if(update.titleKo){const heading=card.querySelector('h3');heading.dataset.ko=update.titleKo;heading.dataset.en=update.titleEn;heading.textContent=update.titleKo;}
         if(update.append) card.append(text);
-        if(update.nextKo){const next=card.querySelector('.next');next.dataset.ko=update.nextKo;next.dataset.en=update.nextEn;next.textContent=update.nextKo;}
+        if(update.nextKo){let next=card.querySelector('.next');if(!next){next=document.createElement('span');next.className='next';card.insertBefore(next,card.querySelector('.tag'));}next.dataset.ko=update.nextKo;next.dataset.en=update.nextEn;next.textContent=update.nextKo;}
         if(update.tagKo){const tag=card.querySelector('.tag');tag.dataset.ko=update.tagKo;tag.dataset.en=update.tagEn;tag.textContent=update.tagKo;}
       }
       let dragged=null;
@@ -268,7 +288,8 @@
       function migrateEducationReview(){const key='gemgem-eb1a-education-review-2026-10-12';if(localStorage.getItem(key))return;const card=document.getElementById('cv-working-review');const list=document.querySelector('[data-lane="expedite"] .card-list');if(card&&list){list.prepend(card);saveBoard();localStorage.setItem(key,'1')}}
       function migrateDocumentScope(){const key='gemgem-eb1a-document-scope-2026-10-12';if(localStorage.getItem(key))return;const list=document.querySelector('[data-lane="expedite"] .card-list');['doc-d12','doc-d18'].forEach(id=>{const card=document.getElementById(id);if(card&&list)list.prepend(card)});saveBoard();localStorage.setItem(key,'1')}
       function migrateOfficialAwardReview(){const key='gemgem-eb1a-official-awards-review-2026-10-12';if(localStorage.getItem(key))return;const list=document.querySelector('[data-lane="expedite"] .card-list');if(!list)return;['doc-d07','doc-d06','doc-d05'].forEach(id=>{const card=document.getElementById(id);if(card)list.prepend(card)});saveBoard();localStorage.setItem(key,'1')}
-      attachOwners();attachLinks();restoreBoard();migrateEducationReview();migrateDocumentScope();migrateOfficialAwardReview();updateCounts();setLanguage(localStorage.getItem(langKey)==='en'?'en':'ko');
+      function migrateChangguReply(){const key='gemgem-eb1a-changgu-reply-2026-10-13';if(localStorage.getItem(key))return;const list=document.querySelector('[data-lane="expedite"] .card-list');if(!list)return;['changgu-followup-review','changgu-ranking-document'].forEach(id=>{const card=document.getElementById(id);if(card)list.prepend(card)});saveBoard();localStorage.setItem(key,'1')}
+      attachOwners();attachLinks();restoreBoard();migrateEducationReview();migrateDocumentScope();migrateOfficialAwardReview();migrateChangguReply();updateCounts();setLanguage(localStorage.getItem(langKey)==='en'?'en':'ko');
       document.querySelectorAll('.lang button').forEach(btn=>btn.addEventListener('click',()=>setLanguage(btn.dataset.lang)));
       document.querySelectorAll('.card').forEach(card=>{
         card.addEventListener('dragstart',event=>{if(event.target.closest('.quick-link')){event.preventDefault();return}dragged=card;card.classList.add('dragging');event.dataTransfer.effectAllowed='move';event.dataTransfer.setData('text/plain',card.id)});
