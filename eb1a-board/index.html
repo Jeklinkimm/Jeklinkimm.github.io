@@ -107,12 +107,12 @@
           tagKo:'최우수 공문 확보 / 법률 검토',tagEn:'Official grade letter obtained / Counsel review',replaceAllParagraphs:true
         },
         'changgu-followup-review':{
-          titleKo:'창구 / 기관 회신 범위와 다음 판단',titleEn:'Changgu / Operator reply scope and next decision',
-          ko:'기관이 네 항목에 회신함. 전체 지원자/단계별 규모는 비공개 / 본인 기업의 점수/평가의견만 제공 가능. 위원단은 창진원 등록 풀에서 시스템 추첨 / 실명/인원/전문분야는 미제공. 자료를 임의로 채우지 않음. 기존 매출 자료 확보 상태는 유지.',
-          en:'Operator answered all four questions. Applicant/stage counts are nonpublic / Only the requesting company’s own scores and evaluation comments may be supplied. Panel drawn by system from KISED-approved pool / No actual names, counts or specialties supplied. Do not invent details. Existing revenue evidence retained.',
-          nextKo:'Expedite / 비공개 수치/패널 상세의 생략 여부 결정. 잼잼 / 필요시 본인 점수/평가의견 추가 요청 검토 / 신규 문의 미발송',
-          nextEn:'Expedite / Decide omission of nonpublic counts and panel detail. GemGem / Consider own-score/comment request only if useful / No new outreach sent',
-          tagKo:'회신 확보 / 추가 문의 필요성 검토',tagEn:'Reply obtained / Assess follow-up need',replaceAllParagraphs:true
+          titleKo:'창구 / 잼잼 평가점수와 평가의견',titleEn:'Changgu / GemGem scores and evaluator comments',
+          ko:'10월 13일 12:51 / 잼잼의 선정평가 최종 점수/가능한 항목별 점수와 평가의견 요청 발신 기록 확인. 전체 회신 / 기존 참조 복원. 기관이 제공 가능하다고 안내한 본인 기업 자료만 요청 / 아직 미수신. 전체 지원자 수와 실명 패널은 비공개 상태 유지.',
+          en:'October 13 at12:51KST / Outgoing request verified for GemGem’s selection score, available criterion scores and evaluator comments. Reply All / Prior CC restored. Requests only own-company records the operator offered / Not yet received. Applicant totals and named panel remain undisclosed.',
+          nextKo:'넥스트챌린지 / 제공 가능한 잼잼 점수/평가의견 회신. 잼잼 / 수신 후 Expedite 공유 / 중복 발송 안 함',
+          nextEn:'NextChallenge / Supply permitted GemGem score/comment records. GemGem / Share received records with Expedite / No duplicate send',
+          tagKo:'추가 요청 발송 / 회신 대기',tagEn:'Follow-up sent / Awaiting records',replaceAllParagraphs:true
         },
         'doc-d16':{
           ko:'10월 13일 기존 메일 재조사 / 별도 유타 IRB 승인 통지서는 아직 미확보. 업로드된 신청/프로토콜은 승인서와 구분 / 미확보가 승인 부재를 뜻하지 않음.',
@@ -289,7 +289,8 @@
       function migrateDocumentScope(){const key='gemgem-eb1a-document-scope-2026-10-12';if(localStorage.getItem(key))return;const list=document.querySelector('[data-lane="expedite"] .card-list');['doc-d12','doc-d18'].forEach(id=>{const card=document.getElementById(id);if(card&&list)list.prepend(card)});saveBoard();localStorage.setItem(key,'1')}
       function migrateOfficialAwardReview(){const key='gemgem-eb1a-official-awards-review-2026-10-12';if(localStorage.getItem(key))return;const list=document.querySelector('[data-lane="expedite"] .card-list');if(!list)return;['doc-d07','doc-d06','doc-d05'].forEach(id=>{const card=document.getElementById(id);if(card)list.prepend(card)});saveBoard();localStorage.setItem(key,'1')}
       function migrateChangguReply(){const key='gemgem-eb1a-changgu-reply-2026-10-13';if(localStorage.getItem(key))return;const list=document.querySelector('[data-lane="expedite"] .card-list');if(!list)return;['changgu-followup-review','changgu-ranking-document'].forEach(id=>{const card=document.getElementById(id);if(card)list.prepend(card)});saveBoard();localStorage.setItem(key,'1')}
-      attachOwners();attachLinks();restoreBoard();migrateEducationReview();migrateDocumentScope();migrateOfficialAwardReview();migrateChangguReply();updateCounts();setLanguage(localStorage.getItem(langKey)==='en'?'en':'ko');
+      function migrateChangguScoreRequest(){const key='gemgem-eb1a-changgu-own-score-request-2026-10-13';if(localStorage.getItem(key))return;const list=document.querySelector('[data-lane="waiting"] .card-list');const card=document.getElementById('changgu-followup-review');if(card&&list){list.prepend(card);saveBoard();localStorage.setItem(key,'1')}}
+      attachOwners();attachLinks();restoreBoard();migrateEducationReview();migrateDocumentScope();migrateOfficialAwardReview();migrateChangguReply();migrateChangguScoreRequest();updateCounts();setLanguage(localStorage.getItem(langKey)==='en'?'en':'ko');
       document.querySelectorAll('.lang button').forEach(btn=>btn.addEventListener('click',()=>setLanguage(btn.dataset.lang)));
       document.querySelectorAll('.card').forEach(card=>{
         card.addEventListener('dragstart',event=>{if(event.target.closest('.quick-link')){event.preventDefault();return}dragged=card;card.classList.add('dragging');event.dataTransfer.effectAllowed='move';event.dataTransfer.setData('text/plain',card.id)});
