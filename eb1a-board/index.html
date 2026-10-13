@@ -108,11 +108,11 @@
         },
         'changgu-followup-review':{
           titleKo:'창구 / 잼잼 평가점수와 평가의견',titleEn:'Changgu / GemGem scores and evaluator comments',
-          ko:'10월 13일 12:51 / 잼잼의 선정평가 최종 점수/가능한 항목별 점수와 평가의견 요청 발신 기록 확인. 전체 회신 / 기존 참조 복원. 기관이 제공 가능하다고 안내한 본인 기업 자료만 요청 / 아직 미수신. 전체 지원자 수와 실명 패널은 비공개 상태 유지.',
-          en:'October 13 at12:51KST / Outgoing request verified for GemGem’s selection score, available criterion scores and evaluator comments. Reply All / Prior CC restored. Requests only own-company records the operator offered / Not yet received. Applicant totals and named panel remain undisclosed.',
-          nextKo:'넥스트챌린지 / 제공 가능한 잼잼 점수/평가의견 회신. 잼잼 / 수신 후 Expedite 공유 / 중복 발송 안 함',
-          nextEn:'NextChallenge / Supply permitted GemGem score/comment records. GemGem / Share received records with Expedite / No duplicate send',
-          tagKo:'추가 요청 발송 / 회신 대기',tagEn:'Follow-up sent / Awaiting records',replaceAllParagraphs:true
+          ko:'10월 13일 17:25 / 운영기관이 자사 항목별 점수 / 합계 / 평가의견 4건 제공. 원문 보존 PDF Expedite 첨부 / Complete와 설명 저장 확인 / 회신 대기 종료. 대표의 기술력과 당시 실행 성과를 평가한 근거 / 공식 순위나 독립 임상효능 증명이 아님. 비공개 점수와 의견 원문은 공개하지 않음.',
+          en:'October 13 at17:25KST / Operator supplied own-company criterion scores, reported total and four evaluator comments. Source-reconstruction PDF attached in Expedite / Complete and saved explanation verified / Waiting task resolved. Evidence of assessed founder capability and execution, not an official rank or independent clinical efficacy proof. Private scores and verbatim comments are not public.',
+          nextKo:'Expedite / 실제 점수/의견을 선정 기준과 대표 기여 근거에 연결 / 번역과 최종 문안 검토. 잼잼 / 동일 자료 재요청 안 함',
+          nextEn:'Expedite / Map actual scores/comments to selection basis and founder contribution / Review translation and final wording. GemGem / Do not re-request the same records',
+          tagKo:'점수/의견 확보 / Expedite 검토',tagEn:'Scores/comments obtained / Expedite review',replaceAllParagraphs:true
         },
         'doc-d16':{
           ko:'10월 13일 / 동규님 회신 첨부 26쪽을 확인: 최신 ERICA 신청/프로토콜 출력본이며 별도 승인 결정 통지서는 아님. 가림 출처 발췌 3쪽과 검토 1쪽 Expedite 첨부 / Complete 확인. 별도 승인 결과와 승인일 자료는 아직 미확보 / 승인이 없다는 뜻은 아님. 계획 등록 수와 실제 완료 수는 구분.',
@@ -195,8 +195,8 @@
         'kunnan-park':{
           ko:'10월 13일 13:58 / Google 담당자 회신 수신. Top3/Top10은 창진원 서류/발표 평가점수에 기반한 Google 추가혜택 내부 구분 / 별도 공식 제도나 확인서 없음. Google 공식 블로그가 유일한 선정 발표라고 확인 / 별도 공문 대기 종료. 회신을 Expedite에 공유 / 개인 추천과 로고/레터헤드 제한 유지. 정부 종료평가 최우수 및 정확 순위와 구분 / CCS 하루 사용 정정 유지.',
           en:'October 13 at13:58KST / Google contact reply received. Top3/Top10 are internal benefit tiers based on KISED document/presentation scores / No separate official scheme or confirmation document. Official Google blog is the sole selection announcement / Stop waiting for a separate certificate. Reply shared in Expedite / Personal recommendation and logo/letterhead limits unchanged. Distinct from government final grade or an exact official ranking / CCS one-day correction retained.',
-          nextKo:'Expedite / 공식 블로그와 담당자 회신으로 선정 표현/범위 및 추천서 최종 검토. 넥스트챌린지 / 잼잼 점수와 평가의견은 별도 회신 대기',
-          nextEn:'Expedite / Finalize selection wording/scope and letter using official blog and contact reply. NextChallenge / Own-company score and evaluator comments remain a separate pending request',
+          nextKo:'Expedite / 공식 블로그 / Google 회신 / 추가 수신한 운영기관 점수/의견으로 선정 표현과 추천서 최종 검토 / 기관 회신 대기는 해소',
+          nextEn:'Expedite / Finalize selection wording and letter with official blog, Google reply and received operator scores/comments / Institution-response waiting resolved',
           tagKo:'Google 회신 확보 / 별도 공문 없음',tagEn:'Google reply obtained / No separate certificate',replaceAllParagraphs:true
         }
       };
@@ -291,7 +291,8 @@
       function migrateChangguReply(){const key='gemgem-eb1a-changgu-reply-2026-10-13';if(localStorage.getItem(key))return;const list=document.querySelector('[data-lane="expedite"] .card-list');if(!list)return;['changgu-followup-review','changgu-ranking-document'].forEach(id=>{const card=document.getElementById(id);if(card)list.prepend(card)});saveBoard();localStorage.setItem(key,'1')}
       function migrateChangguScoreRequest(){const key='gemgem-eb1a-changgu-own-score-request-2026-10-13';if(localStorage.getItem(key))return;const list=document.querySelector('[data-lane="waiting"] .card-list');const card=document.getElementById('changgu-followup-review');if(card&&list){list.prepend(card);saveBoard();localStorage.setItem(key,'1')}}
       function migrateConfirmedOrgChart(){const key='gemgem-eb1a-org-chart-supplied-2026-10-13';if(localStorage.getItem(key))return;const list=document.querySelector('[data-lane="expedite"] .card-list');const card=document.getElementById('doc-d14');if(card&&list){list.prepend(card);saveBoard();localStorage.setItem(key,'1')}}
-      attachOwners();attachLinks();restoreBoard();migrateEducationReview();migrateDocumentScope();migrateOfficialAwardReview();migrateChangguReply();migrateChangguScoreRequest();migrateConfirmedOrgChart();updateCounts();setLanguage(localStorage.getItem(langKey)==='en'?'en':'ko');
+      function migrateChangguScoreReceived(){const key='gemgem-eb1a-changgu-score-received-2026-10-13';if(localStorage.getItem(key))return;const list=document.querySelector('[data-lane="expedite"] .card-list');const card=document.getElementById('changgu-followup-review');if(card&&list){list.prepend(card);saveBoard();localStorage.setItem(key,'1')}}
+      attachOwners();attachLinks();restoreBoard();migrateEducationReview();migrateDocumentScope();migrateOfficialAwardReview();migrateChangguReply();migrateChangguScoreRequest();migrateConfirmedOrgChart();migrateChangguScoreReceived();updateCounts();setLanguage(localStorage.getItem(langKey)==='en'?'en':'ko');
       document.querySelectorAll('.lang button').forEach(btn=>btn.addEventListener('click',()=>setLanguage(btn.dataset.lang)));
       document.querySelectorAll('.card').forEach(card=>{
         card.addEventListener('dragstart',event=>{if(event.target.closest('.quick-link')){event.preventDefault();return}dragged=card;card.classList.add('dragging');event.dataTransfer.effectAllowed='move';event.dataTransfer.setData('text/plain',card.id)});
