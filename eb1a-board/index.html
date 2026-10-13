@@ -98,6 +98,34 @@
       const lists=[...document.querySelectorAll('.card-list')];
       // Verified in Expedite before publication; keep the user's saved card order.
       const sourceUpdates20261013={
+        'cv-working-review':{
+          ko:'10월 13일 / 공식 졸업증명에 맞춘 최신 2쪽 CV PDF 업로드 / Complete와 재조회 확인. 실제 PDF에 학위명과 졸업일 / 회사별 경력 / 출판 기여를 반영. 기존 10월 8일 원본은 보존. 한국 법인 HR 직급의 최종 번역과 초기 UX 경력 검토는 남음 / 제출 최종본은 아님.',
+          en:'October 13 / Updated two-page CV PDF aligned to the official graduation certificate uploaded / Complete and persistence verified. Degree/date, employer-specific history and published credits now appear in the actual PDF. October 8 version preserved. Final HR-title translation and early UX review remain / Not a final filing CV.',
+          nextKo:'Expedite / 최종 CV 문안과 직급 번역 통일. 잼잼 본인 / 초기 UX 경력 검토 또는 생략 결정',
+          nextEn:'Expedite / Finalize CV wording and consistent title translation. Applicant / Review early UX entries or decide omission',
+          tagKo:'최신 PDF 확보 / 최종 검토',tagEn:'Latest PDF supplied / Final review'
+        },
+        'doc-d13':{
+          ko:'10월 13일 / 이메일 원본 보정서에서 청구항 발췌 9쪽과 기술설명 연결표 3쪽 추가 업로드 / Complete 확인. 삭제된 청구항과 등록결정서의 11개 청구항을 공개 출원본 12개와 구분. 최종 등록 명세서 인증본은 아직 미확보 / 논문 구현과 특허 범위 혼용하지 않음.',
+          en:'October 13 / Nine-page filed-claim source extract and three-page technical comparison uploaded / Complete verified. Deleted claim and eleven-claim grant decision distinguished from twelve-claim published application. Certified complete granted specification still unlocated / Study implementation and patent scope kept separate.',
+          nextKo:'Expedite / 최종 등록 명세서와 채택 청구항 확인 / 필요한 구현 근거와 번역 범위 결정',
+          nextEn:'Expedite / Verify complete granted specification and selected claims / Decide implementation evidence and translation scope',
+          tagKo:'청구항 근거 확보 / 최종본 확인 남음',tagEn:'Filed claims supplied / Final grant check remains'
+        },
+        'doc-d18':{
+          ko:'10월 13일 / CCS 담당자 데모 준비와 치료사 피드백 / 체험 논의 / 본인의 당시 사용 시작 보고를 담은 3쪽 이메일 발췌 업로드 / Complete 확인. 외부 담당자 확인과 본인 보고를 구분. 공식 PoC 보고서 없음 / 정확한 완료 시점과 참여 수 또는 효능은 입증하지 않음.',
+          en:'October 13 / Three-page correspondence extract uploaded / Complete verified: CCS demo setup and therapist feedback, prospective trial discussion, and applicant’s contemporaneous report of use. Counterpart evidence separated from self-report. No formal PoC report / Exact completion, participant counts and efficacy remain unproved.',
+          nextKo:'Expedite / 데모와 피드백 중심으로 근거 채택 / 완료된 PoC 주장 유지 여부와 인증 방식 결정',
+          nextEn:'Expedite / Select demo/feedback evidence / Decide completed-PoC claim scope and authentication',
+          tagKo:'실제 이메일 확보 / 범위 검토',tagEn:'Genuine correspondence supplied / Scope review'
+        },
+        'doc-d22':{
+          ko:'10월 13일 / 주장 → 실제 파일과 페이지 → 본인 귀속과 한계 → 남은 검토를 연결한 3쪽 증거 인덱스 업로드 / Complete 확인. CV / 회사 역할 / 특허 / 메이플 / CCS / 논문과 기존 증거를 연결. 체크리스트 완료나 접수 준비 완료를 뜻하지 않음.',
+          en:'October 13 / Three-page claim-to-source index uploaded / Complete verified. Maps actual files/pages, personal attribution, boundaries and remaining review across CV, company role, patent, MapleStory, CCS, article and existing evidence. Not checklist completion or filing readiness.',
+          nextKo:'Expedite / 증거 채택과 인증 번역 / 최종 레터 및 폼 대조 / 조건부·중복 요청 정리',
+          nextEn:'Expedite / Select exhibits and certified translations / Reconcile final letters/forms / Resolve conditional and duplicate requests',
+          tagKo:'증거 연결표 확보 / 변호사 조립',tagEn:'Evidence index supplied / Counsel assembly'
+        },
         'doc-d09':{
           ko:'10월 13일 / 공식 매체 소개와 창구 원문 PDF에 더해 강진희 저자 계정 원본 화면도 추가 / Complete 확인. 저자 표기와 매체 성격은 확인 / 독자 규모는 미확인으로 Needs follow-up 유지. 보도자료 기반 여부 / 본인 관련성 / 인증 번역 / 매체 충분성은 최종 검토 필요.',
           en:'October 13 / Publisher profile and Changgu original PDF supplemented with the official Kang Jinhee author-account capture / Complete verified. Byline identity and outlet focus established; reach unverified / Needs follow-up retained. Press-release provenance, applicant relevance, certified translation and outlet sufficiency need counsel review.',
@@ -111,10 +139,11 @@
           nextEn:'Applicant / Final factual review of role boundaries. Expedite / Decide declaration need/format and finalize technical/clinical wording'
         },
         'doc-d14':{
-          ko:'10월 13일 / 기존 TIPS 묶음에서 2024년 법인 등기 원본 발견 / 개인정보·재무정보 제거한 3쪽 발췌본 업로드 / Complete 확인. 회사 설립일과 김정은 사내이사 취임을 입증하는 과거 기록 / 별도의 대표이사 선임이나 현재 지분·조직도로 확대하지 않음. 기존 사업자등록·투자자 보고서와 함께 검토.',
-          en:'October 13 / Historical 2024 registry found in the existing TIPS package / Privacy- and finance-minimized three-page extract uploaded / Complete verified. Records incorporation and Kim Jeongeun’s inside-director appointment, not a separate CEO appointment or current ownership/org chart. Review with existing registration and investor report.',
-          nextKo:'Codex / 최신 주주·조직도 기존 자료 조사. Expedite / 과거 이사 기록과 CEO 근거 연결 / 최신·전체 등기와 번역 필요성 판단',
-          nextEn:'Codex / Locate existing current shareholder/org records. Expedite / Map historical director and CEO evidence / Decide refreshed/full registry and translation needs'
+          ko:'10월 13일 / 기존 등기 발췌에 더해 과거 주주명부 원본 내장 미리보기 발췌 2쪽과 역할 검토표 1쪽 업로드 / Complete 확인. 문서 내부 날짜는 2024년 11월 29일 / 대표와 연구책임자 및 팀 역할이 나타남. 현재 지분·조직도나 별도 CEO 선임 결의로 확대하지 않음.',
+          en:'October 13 / Historical registry supplemented by two-page embedded shareholder-register preview and one-page role review / Complete verified. Internal source date November 29, 2024 / Representative, research-lead and team roles recorded. Not current ownership/org chart or a separate CEO-appointment resolution.',
+          nextKo:'Expedite / 과거 대표·이사 근거 연결과 최신 자료 필요 여부 판단. 잼잼 본인 / 필요한 경우에만 현재 지분·보고체계 확인',
+          nextEn:'Expedite / Map historical representative/director evidence and decide need for current records. Applicant / Confirm current ownership/reporting lines only if needed',
+          tagKo:'과거 주주·역할 확보 / 현재는 미확인',tagEn:'Historical ownership/roles supplied / Current unverified'
         },
         'doc-d19':{
           ko:'10월 13일 / 논문 PubMed 기록 / NLM 학술지 MEDLINE 등재 / 출판사 공식 학술지 지표 화면 3건 첨부 / Complete 확인. DOI·출판일·다섯 번째 공동저자와 원문 기여 표기 연결. 동일 논문을 중복 성과로 계산하거나 학술지 지표를 본인 인용·임상효능으로 쓰지 않음.',
@@ -123,8 +152,10 @@
           nextEn:'Expedite / Finalize authorship mapping / Separate personal contributions from journal background'
         },
         'doc-d15':{
-          ko:'10월 13일 / 넥슨 2023년 실적 발표 원본 51쪽 추가 업로드 / Complete와 재조회 확인. 기존 2024년 실적 보도자료와 중복 아님. 메이플 20년차 성과와 회사 규모는 배경 근거 / 개인 윌/진힐라 기여 및 회사별 경력 증거와 분리. 직급 번역과 중복 레터 요청은 검토 필요.',
-          en:'October 13 / Full 51-page Nexon FY2023 investor presentation uploaded / Complete and persistence verified. Distinct from the existing FY2024 release. MapleStory longevity and corporate scale are context, separate from personal Will/Verus Hilla contributions and employer-specific records. Title translation and overlapping letter requests need review.'
+          ko:'10월 13일 / 기존 실적 발표 원본에 더해 윌 / 진힐라 공식 출시와 2026년까지 운영 근거 7개를 연결한 2쪽 PDF 업로드 / Complete 확인. 진힐라 여름 이벤트 등장과 정규 레이드 추가를 구분. 장기 운영은 콘텐츠 배경 / 본인 기획 귀속과 회사 전체 매출은 별도 증거.',
+          en:'October 13 / Existing investor presentation supplemented by two-page map of seven official release/operation sources through 2026 / Complete verified. Earlier Verus Hilla event appearance distinguished from regular raid addition. Longevity is content context, not proof of employee authorship or boss-specific revenue.',
+          nextKo:'Expedite / 개인 역할 확인과 공식 콘텐츠 근거 연결 / 직급 번역과 레터 중복 정리',
+          nextEn:'Expedite / Connect verified personal-role scope to official content evidence / Align title translation and letter duplication'
         },
         'grace-park':{
           ko:'10월 13일 이메일 확인 / 세 항목의 구체 답변은 아직 미수신. 10월 9일 도유선의 확인 예정 답변과 괄호 3개 유지 / Expedite AWE 폴더에 저장. 이번에는 카카오톡 신규 답변을 확인한 것은 아님.',
@@ -143,6 +174,7 @@
         text.dataset.ko=update.ko; text.dataset.en=update.en; text.textContent=update.ko;
         if(update.append) card.append(text);
         if(update.nextKo){const next=card.querySelector('.next');next.dataset.ko=update.nextKo;next.dataset.en=update.nextEn;next.textContent=update.nextKo;}
+        if(update.tagKo){const tag=card.querySelector('.tag');tag.dataset.ko=update.tagKo;tag.dataset.en=update.tagEn;tag.textContent=update.tagKo;}
       }
       let dragged=null;
       const caseRoot='https://app.expedite.now/d68lgm1wip4yt1uer1lhw8ig/immigration/cases/wcdjsqsji0gphjbk2gl1uzb9';
