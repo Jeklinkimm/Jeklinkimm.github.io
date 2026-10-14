@@ -237,6 +237,37 @@
           tagKo:'확인 괄호 0개 / 변호사 최종 검토',tagEn:'Zero placeholders / Counsel final review',replaceAllParagraphs:true
         }
       };
+      Object.assign(sourceUpdates20261013,{
+        'doc-d16':{
+          ko:'10월 15일 / 교수님 제공 별도 IRB 승인 결정 원본 PDF 확보 / 변경 없이 Expedite 업로드 / Complete와 재접속 확인. 기존 신청/프로토콜과 구분하며 승인 자료 미확보는 해결. 실행 완료 계약과 지급은 별도 미확인.',
+          en:'October 15 / PI supplied the separate original IRB approval-decision PDF / Uploaded unchanged to Expedite / Complete and persistence verified. Approval-source acquisition resolved, distinct from the earlier protocol. Executed agreement and payment remain separate and unverified.',
+          nextKo:'Expedite / 원본 승인 기록을 레터와 증거에 연결 / 승인일과 발효일 구분. 잼잼 / 같은 승인서 재요청 안 함',
+          nextEn:'Expedite / Map original approval record to letter and exhibits / Distinguish approval and effective dates. GemGem / Do not re-request the same notice',
+          tagKo:'승인 원본 확보 / Expedite 검토',tagEn:'Original approval obtained / Counsel review',replaceAllParagraphs:true
+        },
+        'yongseop-kim':{
+          ko:'10월 15일 / 추천 동의와 비교경험/13명 완료 근거 유지. 별도 IRB 승인 원본 확보 및 Expedite 저장. 계약 실행/지급은 미확인. 변호사 새 요청은 비교연구 1차 자료 / 유타 결과 반영 / 실행 계약. 예전 괄호 0개가 새 검토 완료를 뜻하지 않음.',
+          en:'October 15 / Referee consent, comparison experience and evidence of 13 completions retained. Original IRB approval obtained and saved in Expedite. Agreement execution/payment unverified. New counsel requests concern comparative-study primary evidence, Utah results and executed agreement. Prior zero placeholders does not resolve new review notes.',
+          nextKo:'잼잼 / 기존 원자료와 새 코멘트 대조. Expedite / 확인된 승인과 미확인 비교·계약을 구분해 최종화',
+          nextEn:'GemGem / Reconcile new notes with existing sources. Expedite / Finalize with verified approval and separate unresolved comparison/agreement evidence',
+          tagKo:'승인 증빙 해결 / 새 코멘트 검토',tagEn:'Approval evidence resolved / New notes open',replaceAllParagraphs:true
+        },
+        'email-evidence-review':{
+          titleKo:'원본 증빙 / 이메일 형식 재정리',titleEn:'Original evidence / Email-format reconciliation',
+          ko:'10월 14일 변호사 추가 요청 / 접수용 증거는 원본 이메일과 기관 자료로 구분. AI 보조 요약/재구성 PDF와 연결표는 내부 검토용이며 원본/인증 번역이 아님. 10월 15일 유타 승인 원본 추가 확보 / 기존 원본 자료는 보존 / 전체 파일 수 재집계 아님.',
+          en:'October 14 counsel request / Distinguish original emails and institutional records for filing. AI-assisted summaries, reconstructed PDFs and maps are working aids, not originals or certified translations. Original Utah approval added October 15 / Existing original sources retained / Not a total-file recount.',
+          nextKo:'잼잼/Codex / 재구성 이메일 자료의 원본 형식 확보와 출처 목록. Expedite/Joon / 채택 자료와 번역 대상 확정',
+          nextEn:'GemGem/Codex / Recover original email formats and provenance list. Expedite/Joon / Select exhibits and translation scope',
+          tagKo:'원본 대체 / 번역 범위 정리',tagEn:'Original-source replacement / Translation scope',replaceAllParagraphs:true
+        },
+        'doc-d10':{
+          ko:'10월 14일 Soo가 Joon에게 모든 외국어 문서의 인증 번역 대상 확인을 요청. 원본 이메일/첨부부터 구분하고 채택할 자료만 번역 범위 확정. 이메일 자동번역을 인증 번역 완료로 간주하지 않음 / 추가비용과 최종 형식은 변호사 확인.',
+          en:'October 14 / Soo asked Joon to identify all foreign-language documents for certified translation. Distinguish original emails/attachments and select exhibits first. Email machine translation is not presumed certified / Counsel to confirm format and any additional cost.',
+          nextKo:'Expedite/Joon / 원본 채택 목록과 번역/비용 범위 확정. 잼잼 / 필요한 원본 형식 확보',
+          nextEn:'Expedite/Joon / Confirm selected originals, translation scope and cost. GemGem / Supply required original formats',
+          tagKo:'변호사 새 요청 / 원본·번역 정리',tagEn:'New counsel request / Originals and translations',replaceAllParagraphs:true
+        }
+      });
       for(const [id,update] of Object.entries(sourceUpdates20261013)){
         const card=document.getElementById(id);
         const text=update.append?document.createElement('p'):card.querySelector('p');
@@ -331,7 +362,8 @@
       function migrateChangguScoreReceived(){const key='gemgem-eb1a-changgu-score-received-2026-10-13';if(localStorage.getItem(key))return;const list=document.querySelector('[data-lane="expedite"] .card-list');const card=document.getElementById('changgu-followup-review');if(card&&list){list.prepend(card);saveBoard();localStorage.setItem(key,'1')}}
       function migrateUtahClarificationSent(){const key='gemgem-eb1a-utah-clarification-sent-2026-10-14';if(localStorage.getItem(key))return;const list=document.querySelector('[data-lane="waiting"] .card-list');const card=document.getElementById('doc-d16');if(card&&list){list.prepend(card);saveBoard();localStorage.setItem(key,'1')}}
       function migrateUtahProfessorDraft(){const key='gemgem-eb1a-utah-professor-draft-2026-10-14';if(localStorage.getItem(key))return;const list=document.querySelector('[data-lane="mine"] .card-list');const card=document.getElementById('doc-d16');if(card&&list){list.prepend(card);saveBoard();localStorage.setItem(key,'1')}}
-      attachOwners();attachLinks();restoreBoard();migrateEducationReview();migrateDocumentScope();migrateOfficialAwardReview();migrateChangguReply();migrateChangguScoreRequest();migrateConfirmedOrgChart();migrateChangguScoreReceived();migrateUtahClarificationSent();migrateUtahProfessorDraft();updateCounts();setLanguage(localStorage.getItem(langKey)==='en'?'en':'ko');
+      function migrateUtahApprovalReceived(){const key='gemgem-eb1a-utah-approval-received-2026-10-15';if(localStorage.getItem(key))return;const list=document.querySelector('[data-lane="expedite"] .card-list');const card=document.getElementById('doc-d16');if(card&&list){list.prepend(card);saveBoard();localStorage.setItem(key,'1')}}
+      attachOwners();attachLinks();restoreBoard();migrateEducationReview();migrateDocumentScope();migrateOfficialAwardReview();migrateChangguReply();migrateChangguScoreRequest();migrateConfirmedOrgChart();migrateChangguScoreReceived();migrateUtahClarificationSent();migrateUtahProfessorDraft();migrateUtahApprovalReceived();updateCounts();setLanguage(localStorage.getItem(langKey)==='en'?'en':'ko');
       document.querySelectorAll('.lang button').forEach(btn=>btn.addEventListener('click',()=>setLanguage(btn.dataset.lang)));
       document.querySelectorAll('.card').forEach(card=>{
         card.addEventListener('dragstart',event=>{if(event.target.closest('.quick-link')){event.preventDefault();return}dragged=card;card.classList.add('dragging');event.dataTransfer.effectAllowed='move';event.dataTransfer.setData('text/plain',card.id)});
