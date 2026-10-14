@@ -115,11 +115,11 @@
           tagKo:'점수/의견 확보 / Expedite 검토',tagEn:'Scores/comments obtained / Expedite review',replaceAllParagraphs:true
         },
         'doc-d16':{
-          ko:'10월 13일 / 동규님 회신 첨부 26쪽을 확인: 최신 ERICA 신청/프로토콜 출력본이며 별도 승인 결정 통지서는 아님. 가림 출처 발췌 3쪽과 검토 1쪽 Expedite 첨부 / Complete 확인. 별도 승인 결과와 승인일 자료는 아직 미확보 / 승인이 없다는 뜻은 아님. 계획 등록 수와 실제 완료 수는 구분.',
-          en:'October 13 / Reviewed all26 pages forwarded by operations: updated ERICA application/protocol printout, not a separate approval-decision notice. Three-page redacted source extract and one-page review attached in Expedite / Complete verified. Separate approval outcome/date evidence remains unlocated / Does not imply no approval. Planned enrollment distinguished from completed participation.',
-          nextKo:'10월 14일 재확인 / 별도 승인결정 자료 문의는 이미 발송됨 / 중복 요청 없음. 동규님/연구팀 / 승인 통지 또는 결과 화면 회신 대기. Expedite / 출처 분류와 필요 범위 검토',
-          nextEn:'October 14 verification / Separate approval-record clarification already sent / No duplicate request. Operations/research team / Await approval notice or decision-screen record. Expedite / Review source type and required scope',
-          tagKo:'문의 발송 확인 / 승인 자료 회신 대기',tagEn:'Clarification sent / Approval record awaited'
+          ko:'10월 14일 / 동규님이 별도 자료를 가지고 있지 않아 교수님께 문의해달라고 회신. 기존 프로토콜 검토/가림 발췌본은 Expedite 첨부 완료. 교수님 기존 스레드 전체 회신 초안을 백단으로 저장 / 동규님 수신자 유지 / 미발송. 별도 승인 결과/날짜 자료 미확보는 승인 부재를 뜻하지 않음.',
+          en:'October 14 / Operations replied that no separate copy is on hand and asked the applicant to approach the professor. Existing protocol review/redacted extract remain attached in Expedite. Reply All draft saved through the mail backend on the professor’s thread / Operations recipient retained / NOT SENT. Unlocated approval outcome/date evidence does not imply no approval.',
+          nextKo:'잼잼 본인 / 교수님 문의 초안 검토 후 직접 발송. 교수님 / 승인 통지 또는 승인 상태/날짜 자료와 발급 절차 확인. Expedite / 확보 후 출처와 필요 범위 검토',
+          nextEn:'Applicant / Review and send the professor inquiry draft. Professor / Supply approval notice, status/date evidence or request procedure. Expedite / Review source and scope after receipt',
+          tagKo:'교수님 문의 초안 준비 / 본인 검토',tagEn:'Professor inquiry drafted / Applicant review'
         },
         'doc-d17':{
           ko:'10월 13일 동규님 실제 회신 / 지급 절차 준비 중이며 지급과 함께 계약서 날인 예정. 대학 행정 담당자에게 실행/서명/지급 안내도 요청한 상태. 최종 양측 서명본 / 송금 완료는 아직 미확인 / 초안과 연구 완료 기록으로 체결 완료를 단정하지 않음.',
@@ -308,7 +308,8 @@
       function migrateConfirmedOrgChart(){const key='gemgem-eb1a-org-chart-supplied-2026-10-13';if(localStorage.getItem(key))return;const list=document.querySelector('[data-lane="expedite"] .card-list');const card=document.getElementById('doc-d14');if(card&&list){list.prepend(card);saveBoard();localStorage.setItem(key,'1')}}
       function migrateChangguScoreReceived(){const key='gemgem-eb1a-changgu-score-received-2026-10-13';if(localStorage.getItem(key))return;const list=document.querySelector('[data-lane="expedite"] .card-list');const card=document.getElementById('changgu-followup-review');if(card&&list){list.prepend(card);saveBoard();localStorage.setItem(key,'1')}}
       function migrateUtahClarificationSent(){const key='gemgem-eb1a-utah-clarification-sent-2026-10-14';if(localStorage.getItem(key))return;const list=document.querySelector('[data-lane="waiting"] .card-list');const card=document.getElementById('doc-d16');if(card&&list){list.prepend(card);saveBoard();localStorage.setItem(key,'1')}}
-      attachOwners();attachLinks();restoreBoard();migrateEducationReview();migrateDocumentScope();migrateOfficialAwardReview();migrateChangguReply();migrateChangguScoreRequest();migrateConfirmedOrgChart();migrateChangguScoreReceived();migrateUtahClarificationSent();updateCounts();setLanguage(localStorage.getItem(langKey)==='en'?'en':'ko');
+      function migrateUtahProfessorDraft(){const key='gemgem-eb1a-utah-professor-draft-2026-10-14';if(localStorage.getItem(key))return;const list=document.querySelector('[data-lane="mine"] .card-list');const card=document.getElementById('doc-d16');if(card&&list){list.prepend(card);saveBoard();localStorage.setItem(key,'1')}}
+      attachOwners();attachLinks();restoreBoard();migrateEducationReview();migrateDocumentScope();migrateOfficialAwardReview();migrateChangguReply();migrateChangguScoreRequest();migrateConfirmedOrgChart();migrateChangguScoreReceived();migrateUtahClarificationSent();migrateUtahProfessorDraft();updateCounts();setLanguage(localStorage.getItem(langKey)==='en'?'en':'ko');
       document.querySelectorAll('.lang button').forEach(btn=>btn.addEventListener('click',()=>setLanguage(btn.dataset.lang)));
       document.querySelectorAll('.card').forEach(card=>{
         card.addEventListener('dragstart',event=>{if(event.target.closest('.quick-link')){event.preventDefault();return}dragged=card;card.classList.add('dragging');event.dataTransfer.effectAllowed='move';event.dataTransfer.setData('text/plain',card.id)});
