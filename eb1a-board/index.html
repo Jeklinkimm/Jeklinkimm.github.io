@@ -244,7 +244,7 @@
         if(update.titleKo){const heading=card.querySelector('h3');heading.dataset.ko=update.titleKo;heading.dataset.en=update.titleEn;heading.textContent=update.titleKo;}
         if(update.append) card.append(text);
         if(update.nextKo){let next=card.querySelector('.next');if(!next){next=document.createElement('span');next.className='next';card.insertBefore(next,card.querySelector('.tag'));}next.dataset.ko=update.nextKo;next.dataset.en=update.nextEn;next.textContent=update.nextKo;}
-        if(update.tagKo){const tag=card.querySelector('.tag');tag.dataset.ko=update.tagKo;tag.dataset.en=update.tagEn;tag.textContent=update.tagKo;}
+        if(update.tagKo){let tag=card.querySelector('.tag');if(!tag){tag=document.createElement('span');tag.className='tag';card.append(tag);}tag.dataset.ko=update.tagKo;tag.dataset.en=update.tagEn;tag.textContent=update.tagKo;}
       }
       let dragged=null;
       const caseRoot='https://app.expedite.now/d68lgm1wip4yt1uer1lhw8ig/immigration/cases/wcdjsqsji0gphjbk2gl1uzb9';
