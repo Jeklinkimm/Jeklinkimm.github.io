@@ -349,11 +349,11 @@
           tagKo:'괄호 0개 / 변호사 판단 남음',tagEn:'Zero placeholders / Counsel decision remains',replaceAllParagraphs:true
         },
         'kuhui-jeong':{
-          ko:'10월 19일 본인 확인 / 온라인 심사에서 20개 게임 전부 평가. 실제 Expedite 레터에 반영하고 해당 확인 괄호 제거. 본인 직접 확인이며 새 기관 문서를 확보한 것은 아님. 중복 문의 초안은 미발송 상태로 정리 / 공식 동료와 기준 및 우승작 근거 유지.',
-          en:'October19 applicant confirmation / Personally evaluated all20 online games. Actual Expedite letter updated and scope placeholder removed. Firsthand applicant confirmation, not a new organizer document. Obsolete inquiry draft retired unsent / Official peers, criteria and winner evidence retained.',
-          nextKo:'Expedite / 상세 배점표와 별도 위촉장 필요성 및 최종 문안 검토. 잼잼 / 같은 평가 범위 재문의 불필요',
-          nextEn:'Expedite / Review rubric and appointment-letter sufficiency and final wording. GemGem / No repeated online-scope inquiry needed',
-          tagKo:'평가 범위 확인 완료 / Expedite 차례',tagEn:'Online scope confirmed / Expedite review',replaceAllParagraphs:true
+          ko:'10월 19일 / 온라인20개 전체 평가의 본인 확인은 실제 레터에 반영된 상태. 별도 BIC 기관발급 심사 참여 확인서를 정구휘님 개인 Discord DM으로 요청 / 발송 확인. 찾은 그룹은 ALT-G 심사방이어서 BIC 요청을 게시하지 않음. 요청한 상태일 뿐 발급확약 / 서류 수령 / 메모 해결 완료는 아님.',
+          en:'October19 / Applicant all20 online-game confirmation remains incorporated in the actual letter. Separate BIC institution-issued judging confirmation requested through the organizer’s personal Discord DM / Send verified. Discovered group was ALT-G, so no BIC request posted there. Request only, not issuer agreement, document receipt or resolved note.',
+          nextKo:'정구휘 / BIC 사무국 / 공식 확인서 발급 가능 여부와 서류 회신. Expedite / 수령 후 원본과 내용 검토 / 상세 배점표 필요성 판단',
+          nextEn:'Organizer/BIC office / Confirm issuance route and supply actual document. Expedite / Review source/content after receipt and decide detailed-rubric need',
+          tagKo:'공식 확인서 요청 발송 / 회신 대기',tagEn:'Official confirmation requested / Awaiting reply',replaceAllParagraphs:true
         },
         'kunnan-park':{
           ko:'10월 19일 / Soo 새 메모 2건 대조. Google 실제 공식 발표 원문 반영 / 정부 공식 순위와 구분. 운영기관이 확인한 평가위원 풀 / 시스템 추첨은 기재하되 개별 위원 전문성은 추정하지 않음. 개인 자격 / 로고 제한 유지. 과거 자동제안은 변호사 검토 대상으로 보존.',
@@ -491,7 +491,8 @@
       function migrateUtahApprovalReceived(){const key='gemgem-eb1a-utah-approval-received-2026-10-15';if(localStorage.getItem(key))return;const list=document.querySelector('[data-lane="expedite"] .card-list');const card=document.getElementById('doc-d16');if(card&&list){list.prepend(card);saveBoard();localStorage.setItem(key,'1')}}
       function migrateBicApplicantQuestion(){const key='gemgem-eb1a-bic-applicant-question-2026-10-19';if(localStorage.getItem(key))return;const card=document.getElementById('kuhui-jeong');const list=document.querySelector('[data-lane="mine"] .card-list');if(card&&list){list.prepend(card);saveBoard();localStorage.setItem(key,'1')}}
       function migrateBicApplicantConfirmed(){const key='gemgem-eb1a-bic-all20-confirmed-2026-10-19';if(localStorage.getItem(key))return;const card=document.getElementById('kuhui-jeong');const list=document.querySelector('[data-lane="expedite"] .card-list');if(card&&list){list.prepend(card);saveBoard();localStorage.setItem(key,'1')}}
-      attachOwners();attachLinks();restoreBoard();migrateEducationReview();migrateDocumentScope();migrateOfficialAwardReview();migrateChangguReply();migrateChangguScoreRequest();migrateConfirmedOrgChart();migrateChangguScoreReceived();migrateUtahClarificationSent();migrateUtahProfessorDraft();migrateUtahApprovalReceived();migrateBicApplicantQuestion();migrateBicApplicantConfirmed();updateCounts();setLanguage(localStorage.getItem(langKey)==='en'?'en':'ko');
+      function migrateBicConfirmationRequested(){const key='gemgem-eb1a-bic-confirmation-request-sent-2026-10-19';if(localStorage.getItem(key))return;const card=document.getElementById('kuhui-jeong');const list=document.querySelector('[data-lane="waiting"] .card-list');if(card&&list){list.prepend(card);saveBoard();localStorage.setItem(key,'1')}}
+      attachOwners();attachLinks();restoreBoard();migrateEducationReview();migrateDocumentScope();migrateOfficialAwardReview();migrateChangguReply();migrateChangguScoreRequest();migrateConfirmedOrgChart();migrateUtahClarificationSent();migrateUtahProfessorDraft();migrateUtahApprovalReceived();migrateBicApplicantQuestion();migrateBicApplicantConfirmed();migrateBicConfirmationRequested();updateCounts();setLanguage(localStorage.getItem(langKey)==='en'?'en':'ko');
       document.querySelectorAll('.lang button').forEach(btn=>btn.addEventListener('click',()=>setLanguage(btn.dataset.lang)));
       document.querySelectorAll('.card').forEach(card=>{
         card.addEventListener('dragstart',event=>{if(event.target.closest('.quick-link')){event.preventDefault();return}dragged=card;card.classList.add('dragging');event.dataTransfer.effectAllowed='move';event.dataTransfer.setData('text/plain',card.id)});
