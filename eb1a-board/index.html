@@ -394,6 +394,16 @@
           tagKo:'AWE 원본 추가 / Expedite 검토',tagEn:'AWE originals added / Expedite review',replaceAllParagraphs:true
         }
       });
+      // October 21: research-backed restorations, not blanket omission or legal closure.
+      for(const [id,ko,en] of [
+        ['wonjun-choi','10월 21일 공식자료 재조사 / 2026 AI/XR 경진대회 기업소개의 넥슨코리아 2023년 직원 3,699명을 출처와 연도를 붙여 실제 레터에 복원. 현재 직원 수나 메이플 기획자 수와 구분. 기존 본인보고 구두 사실확인 / 업무분담 / 80/40/60 경력별 평가 경험은 유지하며 중복 제외 인원은 추정하지 않음.','October21 primary-source recheck / Actual letter restores the competition company profile’s 2023 NEXON Korea workforce of3,699 with source and year. Not current workforce or MapleStory planners. Existing applicant-reported oral confirmations, project roles and80/40/60 role-specific estimates retained / No unique-person total inferred.'],
+        ['eunjae-ko','10월 21일 / 출판사 공식 페이지에서 학술지 채택률 17% 확인 후 실제 레터에 복원. 전년도 최종 결정 논문 대비 채택 논문 비율이며 개인 논문 채택 확률이 아님. 기존 IF / CiteScore / 역할 분리 유지. Authorship에 원문 캡처 첨부 / 최종 검토와 서명 전.','October21 / Publisher official page verifies17% journal acceptance; restored in actual letter with prior-full-calendar-year final-decision denominator. Not this article’s acceptance probability. Existing IF/CiteScore and role boundaries retained. Original capture attached in Authorship / Final review and signing remain.'],
+        ['junjae-byun','10월 21일 / 재단 공식 2024년 발표가 잼잼을 직접 명시하고 서류 / 사업 / 기업가정신의 3단계 평가를 확인. 실제 레터에 출처 연결 / 20팀과 10+10 트랙 유지. 당시 원본 이메일의 별도 결선 서면심사와 당일 순위 절차도 유지. 2024 지원자 수는 미확인 / 다른 기수 40:1로 대체하지 않음.','October21 / Foundation’s2024 announcement expressly names GemGem and verifies document, business and entrepreneurship screening. Source linked in actual letter /20-company and10+10 cohort retained. Later finalist written review and event-day ranking remain separately sourced.2024 applicant total not recovered / No substitution of another cohort’s40:1.'],
+        ['yujin-joe','10월 21일 / 정부 원문으로 일반 TIPS의 민간 운영사 선별 / 투자 / 추천 후 별도 정부 평가 구조를 실제 레터에 보강. 520은 후대 보도에는 있으나 정확한 연도와 트랙의 직접 원문은 아직 미확보 / 전체 700이나 경쟁률로 대체하지 않음. 투자자별 분리와 기존 사실은 유지.','October21 / Actual letter strengthened from government ordinary-TIPS rules: private-operator screening, investment and recommendation followed by separate government evaluation.520 appears in later reporting but the exact dated/track-specific primary count is not recovered / No substitution of700 or acceptance ratio. Distinct investor scope retained.'],
+        ['doc-d22','10월 21일 / 미확인 주장 4항목 재조사 후 실제 레터와 중앙39건 대응표에 반영: 학술지 채택률17% / 넥슨코리아 2023년 직원3,699 / H-OnDream 3단계 선발 / 일반TIPS 민간투자 후 별도 정부평가. 아직 못 찾은 수치와 사실이 아닌 주장은 구분. 메모39건은 법률 검토 대상이며 자동 Resolve하지 않음.','October21 / Four previously unverified items researched and reflected in actual letters and central39-note map:17% journal acceptance,3,699 NEXON Korea employees in2023, three-stage H-OnDream selection and separate government evaluation after TIPS private investment. Unrecovered statistics are distinguished from disproven assertions.39 notes remain for counsel / No automatic Resolve.']
+      ]){
+        sourceUpdates20261013[id]={...sourceUpdates20261013[id],ko,en,replaceAllParagraphs:true};
+      }
       for(const [id,update] of Object.entries(sourceUpdates20261013)){
         const card=document.getElementById(id);
         const text=update.append?document.createElement('p'):card.querySelector('p');
