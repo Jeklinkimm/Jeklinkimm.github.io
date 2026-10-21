@@ -404,6 +404,15 @@
       ]){
         sourceUpdates20261013[id]={...sourceUpdates20261013[id],ko,en,replaceAllParagraphs:true};
       }
+      sourceUpdates20261013['doc-d22']={
+        ...sourceUpdates20261013['doc-d22'],
+        ko:'10월 21일 인계 준비 / 기존 메모에 대한 본인 사실입력 6개 주제 묶음을 Expedite 중앙표에 정리: 넥슨 역할 / 대표와 기술 책임 / 임상과 저자 역할 / 실제 심사 / Cartier 직접지원 / H-OnDream 참여. 새로 해결한 메모 6건이라는 뜻은 아님. 외부 회신은 Grace / BIC 운영진 / 유타 계약의 3개 대기로 분리. 공개자료 조사와 문안 채택은 Expedite에 역할 확인을 요청할 사항이며 계약상 분담 확정 아님. 전체 접수 준비 완료나 법률 메모 Resolve 아님.',
+        en:'October21 handoff prepared / Six factual-input topic groups mapped in Expedite: Nexon roles, founder/technical authority, clinical/authorship facts, actual judging, direct Cartier application and H-OnDream participation. Not six newly resolved notes. Three external queues: Grace, BIC organizers and Utah agreement. Public-context research and wording decisions proposed for Expedite allocation confirmation, not an established contractual R&R. Not full filing readiness or note Resolve.',
+        nextKo:'Expedite / 기존 답변과 출처 검토 / 대기 건 외 레터 진행 / 공개조사 담당과 추가 본인 요청을 구분. 잼잼 / 외부 회신 수령 후 추가 반영 / 승인 전 연락 발송 없음',
+        nextEn:'Expedite / Review supplied facts/sources, progress unblocked letters and clarify research versus applicant requests. GemGem / Add external replies when received / No unapproved outreach',
+        tagKo:'본인 입력 인계 / 외부 대기 / 팀 검토 구분',
+        tagEn:'Applicant inputs / External queues / Team review separated',replaceAllParagraphs:true
+      };
       for(const [id,update] of Object.entries(sourceUpdates20261013)){
         const card=document.getElementById(id);
         const text=update.append?document.createElement('p'):card.querySelector('p');
