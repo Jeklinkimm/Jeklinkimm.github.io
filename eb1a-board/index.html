@@ -413,6 +413,11 @@
         tagKo:'33개 개별 인계 / 법률 Resolve 없음',
         tagEn:'33 individual dispositions / No legal Resolve',replaceAllParagraphs:true
       };
+      sourceUpdates20261013['yujin-joe']={
+        ...sourceUpdates20261013['yujin-joe'],
+        ko:sourceUpdates20261013['yujin-joe'].ko+' 10월21일 grilling Q1 본인 승인 / 개인적으로 논문을 읽거나 받았다는 미확인 표현 없이, 객관적 출판 사실과 실제 투자/경영 관찰에 집중. 현 본문이 일치함을 재확인 / 추천인 최종 검토나 변호사 Resolve와 다름.',
+        en:sourceUpdates20261013['yujin-joe'].en+' October21 grilling Q1 approved by applicant / Use objective publication context and actual investor business observations, without unverified personal reading/receipt. Existing body rechecked and conforms / Not referee approval or counsel Resolve.'
+      };
       for(const [id,update] of Object.entries(sourceUpdates20261013)){
         const card=document.getElementById(id);
         const text=update.append?document.createElement('p'):card.querySelector('p');
