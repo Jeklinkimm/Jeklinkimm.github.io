@@ -455,6 +455,30 @@
         nextEn:'Expedite / Review source/denominators and finalize wording. GemGem / Coordinate Jay final review of approved text / No further count inquiry',
         tagKo:'487팀 /48.7:1 확인 / Expedite 검토',tagEn:'487 applications /48.7:1 confirmed / Counsel review',replaceAllParagraphs:true
       };
+      sourceUpdates20261013['cv-working-review']={
+        ...sourceUpdates20261013['cv-working-review'],
+        ko:'10월23일 / 최신 CV 임상 표현을 48명 등록/배정, 45명 분석(중재21 / 대조24), 중재군 평균 순응도91.87%(반올림91.9%)로 통일. 윌/진힐라 게임디자인 직접 설계와 진힐라 보조2명의 데이터 연결/실행 역할 구분. 기존 학력/경력기간/공동저자/CCS 하루 사용 범위 유지. Expedite 편집용 전문 저장 및 새로고침 후 전체 일치 확인. 새2쪽 PDF 제작/전 페이지 검수 완료 / 새 PDF 첨부는 아직 미확인, 이전 PDF 보존.',
+        en:'October23 / CV aligned to48 enrolled/randomized,45 analyzed (21 intervention/24 control), and intervention-group mean adherence91.87% (rounded91.9%). Will/Verus Hilla personal game design separated from two Hilla assistants implementing data connections/tasks. Verified education, tenure, coauthor and one-day CCS scope retained. Full editable CV saved in Expedite / Whole-value reload verified. New two-page PDF prepared/visually checked / New PDF attachment not yet verified; earlier PDFs retained.',
+        nextKo:'Codex / 새 PDF 첨부 재시도. Expedite / 현재 전문 기준으로 직급 번역과 최종 CV/제출 형식 검토 / 같은 사실 재질문 불필요',
+        nextEn:'Codex / Retry new PDF attachment. Expedite / Finalize CV, HR-title translation and filing format from current editable text / No repeat factual questions',
+        tagKo:'최신 전문 저장 / 새 PDF 첨부 미확인',tagEn:'Current text saved / New PDF attachment unverified',replaceAllParagraphs:true
+      };
+      sourceUpdates20261013['doc-d12']={
+        ...sourceUpdates20261013['doc-d12'],
+        ko:'10월23일 / 기술설명서와 기여 부록 임상 수치 통일: 48명 배정/45명 분석(21+24), 중재군 평균91.87%(91.9%). 8주24회 예정 세션 중400회 초과 반복 세션의 순응도로 정의 / 성공률이나 개선 환자 비율 아님. 10월14일 확인한 본인 설계/개발팀 구현/임상팀 역할 유지. Expedite에 최신 전문과 부록 저장 / 새로고침 후 전체 일치. 새4쪽 미서명 PDF 제작/전 페이지 검수 완료 / 새 첨부는 아직 미확인, 기존 원본/과거 버전 보존.',
+        en:'October23 / Technical statement/addendum aligned:48 randomized/45 analyzed (21+24), intervention-group mean91.87% (91.9%). Adherence uses sessions exceeding400 repetitions over24 scheduled sessions/eight weeks, distinct from success/improvement rates. October14 applicant design/developer implementation/clinical roles retained. Latest full text/addendum saved in Expedite / Whole-value reload verified. New four-page unsigned PDF prepared/visually checked / New attachment unverified; original/historical versions preserved.',
+        nextKo:'Codex / 새 PDF 첨부 재시도. Expedite / 현재 전문과 원문 기준으로 최종 문안/귀속/서명 형식 결정 / 본인 역할 재확인 불필요',
+        nextEn:'Codex / Retry new PDF attachment. Expedite / Finalize wording, attribution and signature format against current text/originals / No repeat role confirmation',
+        tagKo:'임상 분모 통일 / 전문 저장 / 미서명',tagEn:'Clinical counts aligned / Text saved / Unsigned',replaceAllParagraphs:true
+      };
+      sourceUpdates20261013['doc-d22']={
+        ...sourceUpdates20261013['doc-d22'],
+        ko:'10월23일 / 활성33개 검토: 사실/출처 반영18, 변호사 판단9, 외부 자료 대기6 / 법률 Resolve 없음. 본인이18:54에33개 번호별 WhatsApp 인계와 Soo/Joon 멘션을 직접 전송 / 실제 Sent 확인, 팀 회신/열람은 미확인. 이전 미전송 초안 표시는 과거 상태. CV와 기술설명서 최신 임상 수치/기획 역할 전문을 Expedite에 저장하고 재접속 검증. 새 PDF2쪽/4쪽 제작/전 페이지 검수 완료 / 첨부는 아직 미확인. 홍준택 백업6개는 활성33개와 별도.',
+        en:'October23 /33 active notes reviewed:18 source responses,9 counsel decisions,6 external waits / No legal Resolve. Applicant sent33-item WhatsApp handoff and Soo/Joon mentions at18:54 / Native Sent confirmed; no team reply/read inferred. Earlier unsent-draft wording historical. Current CV/technical clinical figures and design scope saved in Expedite and reload-verified. New two-/four-page PDFs prepared and visually checked / Attachment not yet verified. Six Hong-backup notes separate from active33.',
+        nextKo:'Codex / 새 PDF 첨부 재시도 및 구체적 외부 회신 반영. Expedite /9개 표현 판단, 채택/번역/추천인 최종 검토 순서 확정',
+        nextEn:'Codex / Retry new PDF attachments and process specific source replies. Expedite / Decide9 scope items, exhibit/translation choices and final referee-review sequence',
+        tagKo:'인계 전송 확인 /18 반영 /9 판단 /6 대기',tagEn:'Handoff sent /18 reflected /9 decisions /6 waits',replaceAllParagraphs:true
+      };
       for(const [id,update] of Object.entries(sourceUpdates20261013)){
         const card=document.getElementById(id);
         const text=update.append?document.createElement('p'):card.querySelector('p');
