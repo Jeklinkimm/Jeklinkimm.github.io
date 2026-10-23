@@ -479,6 +479,14 @@
         nextEn:'Codex / Retry new PDF attachments and process specific source replies. Expedite / Decide9 scope items, exhibit/translation choices and final referee-review sequence',
         tagKo:'인계 전송 확인 /18 반영 /9 판단 /6 대기',tagEn:'Handoff sent /18 reflected /9 decisions /6 waits',replaceAllParagraphs:true
       };
+      sourceUpdates20261013['doc-d22']={
+        ...sourceUpdates20261013['doc-d22'],
+        ko:'10월23일 / 본인 승인 기준으로 실제 Expedite 담당자 드롭다운 변경. 새로고침 후 68개 전 항목 대조: Expedite team 63 / You 5. You는 여권 / 미국 비자 이력 / 신원 및 가족서류 / 사진 / BIC 기관 확인서. 기존 완료74개와 미완료68개, 요청별 추가검토9개는 유지. 기존 자료 검토와 번역 및 레터 작성/추가 필요성 판단을 팀으로 배정한 것이며 모든 증빙 확보나 서명 완료를 뜻하지 않음. 폴더 증거와 개별 요청 연결 검토는 남음. 별도 활성33메모는 사실반영18 / 변호사 판단9 / 외부대기6 유지. CV 최신3쪽 PDF 업로드 확인 / 기술설명서 전문 저장, 새4쪽 PDF 및 CCS 사진 첨부는 별도 미확인.',
+        en:'October23 / Actual Expedite responsibility dropdowns changed under applicant approval. All68 rows matched after reload:63 Expedite team /5 You. Applicant retains passport, US immigration history, identity/family records, photos and BIC institutional confirmation.74 completed /68 open and nine request follow-up flags unchanged. Team assignment covers evidence review, translation, letter drafting and additional-letter scope decisions, not proof that every source or signed letter exists. Folder-to-request source mapping still needs review. Separate33-note ledger remains18 source responses /9 counsel decisions /6 external waits. Current three-page CV PDF upload verified / Technical full text saved; new four-page PDF and CCS photo attachments unverified.',
+        nextKo:'Expedite / 실제 배정63건의 증거 연결과 채택/번역/레터 범위 검토. 잼잼 / 본인 서류와 외부 회신 확보 / 팀 수신·수락은 별도 확인',
+        nextEn:'Expedite / Review mapping, exhibit/translation scope and letter decisions for63 assigned requests. Applicant / Identity sources and external replies / Team receipt and acceptance not inferred',
+        tagKo:'실제 담당자 저장 확인 / 팀63 / 본인5',tagEn:'Actual assignment saved / Team63 / Applicant5',replaceAllParagraphs:true
+      };
       for(const [id,update] of Object.entries(sourceUpdates20261013)){
         const card=document.getElementById(id);
         const text=update.append?document.createElement('p'):card.querySelector('p');
