@@ -487,6 +487,22 @@
         nextEn:'Expedite / Review mapping, exhibit/translation scope and letter decisions for63 assigned requests. Applicant / Identity sources and external replies / Team receipt and acceptance not inferred',
         tagKo:'실제 담당자 저장 확인 / 팀63 / 본인5',tagEn:'Actual assignment saved / Team63 / Applicant5',replaceAllParagraphs:true
       };
+      sourceUpdates20261013['doc-d01']={
+        ...sourceUpdates20261013['doc-d01'],
+        ko:'10월24일 / 본인이 제공하고 선택한 여권 신원정보면 원본을 Passport 요청에 첨부. 파일 Complete와 새로고침 후 요청 연결 및 저장 확인. 주요 정보는 읽히지만 일부 테두리가 잘려 최종 사본 품질은 Expedite 검토 필요. 증명사진과는 별도 / 개인정보 입력값과 법률 완료 체크는 변경하지 않음. 여권 이미지와 신원정보는 공개 보드에 게시하지 않음.',
+        en:'October24 / Applicant-supplied original passport biographic photo attached to Passport request. File Complete and request linkage persisted after reload. Main fields readable; cropped page border requires counsel copy-quality review. Separate from passport-style headshot / Personal fields and request completion unchanged. No identity values or image published here.',
+        nextKo:'Expedite / 사본 품질과 최종 폼 대조 검토. 본인 / 교체 필요 시 전체 테두리 사본 제공 및 민감정보 직접 입력',
+        nextEn:'Expedite / Review copy quality and final forms. Applicant / Full-border replacement if needed; enter sensitive identity fields directly',
+        tagKo:'여권 원본 첨부 확인 / 품질 검토',tagEn:'Passport attached / Quality review',replaceAllParagraphs:true
+      };
+      sourceUpdates20261013['doc-d02']={
+        ...sourceUpdates20261013['doc-d02'],
+        ko:'10월24일 / 본인 방문 방식 답변은 비공개 Expedite 기록에 반영. I-94 및 출입국 기록 원본은 아직 조회/첨부하지 않음. 방문 방식만으로 입국 기록이 없거나 불필요하다고 간주하지 않음 / 해당 요청 완료 체크는 유지. 공개 보드에는 개인 입국 이력이나 식별정보를 게시하지 않음.',
+        en:'October24 / Applicant entry-method answer recorded privately in Expedite. I-94/travel-history originals not yet retrieved or attached. Entry method alone does not establish absent or unnecessary records / Request remains open. No specific immigration history or identifiers published here.',
+        nextKo:'본인 / 공식 조회 화면에서 개인정보 직접 입력 후 해당 기록 제공. Expedite / 필요한 기록 범위 검토',
+        nextEn:'Applicant / Enter personal data directly on official retrieval page and provide applicable records. Expedite / Review record scope',
+        tagKo:'본인 답변 반영 / 입국 기록 확보 필요',tagEn:'Applicant answer recorded / Entry record pending',replaceAllParagraphs:true
+      };
       for(const [id,update] of Object.entries(sourceUpdates20261013)){
         const card=document.getElementById(id);
         const text=update.append?document.createElement('p'):card.querySelector('p');
