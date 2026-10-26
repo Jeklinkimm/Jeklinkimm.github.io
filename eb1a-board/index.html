@@ -503,6 +503,23 @@
         nextEn:'Applicant / Enter personal data directly on official retrieval page and provide applicable records. Expedite / Review record scope',
         tagKo:'본인 답변 반영 / 입국 기록 확보 필요',tagEn:'Applicant answer recorded / Entry record pending',replaceAllParagraphs:true
       };
+      const bicSourceStatus20261026={
+        ko:'10월26일 확인 / 정구휘 대표가24일11:04~11:05에 기입 완료된7월 부스 선발 원본 채점표 링크를 공유. 원본 접근 성공 / 확인한 심사위원 탭의 전체 점수 척도는1~10점. 항목별 세부 기준/가중치는 머리글에서 확인되지 않음. 개인 점수/심사 의견/연락처를 제외한 원문 머리글 발췌를 Expedite에 첨부. 원본 시트는 수정하지 않음. #20은 자료 대기에서 변호사 충분성 검토로 이동 / Resolve 아님. BIC 기관 발급 확인서 #18은 별도 대기. ALT-G 본선3/3과 예선8/14 구분 및8월 어워즈 별도 범위 유지.',
+        en:'October26 verification / Kuhwe shared the completed July booth-selection original sheet on October24 at11:04–11:05. Original access succeeded; inspected judge-tab header shows an overall1-to-10 score field, not item-level criteria/weights. Source-header excerpt excluding individual scores, comments and contact values attached in Expedite. Original sheet unchanged. #20 moves from source wait to counsel sufficiency review, not Resolve. BIC-issued confirmation #18 remains separately pending. ALT-G final3/3 versus preliminary8/14 and separate August awards retained.',
+        nextKo:'Expedite / 원본 척도와 기존 기준 회고의 증거 충분성 판단 / 추가 세부 기준 필요 여부 결정. 잼잼 / 기관 확인서 회신 추적 / 이미 감사 답장 완료',
+        nextEn:'Expedite / Assess original scale with prior criteria recollection and decide whether further detail is essential. Applicant / Await institutional confirmation / Already thanked organizer',
+        tagKo:'원본 채점표 확보 / 세부 기준 검토',tagEn:'Original score sheet obtained / Criteria review',replaceAllParagraphs:true
+      };
+      sourceUpdates20261013['kuhui-jeong']={...sourceUpdates20261013['kuhui-jeong'],...bicSourceStatus20261026};
+      sourceUpdates20261013['doc-d11']={...sourceUpdates20261013['doc-d11'],...bicSourceStatus20261026};
+      sourceUpdates20261013['doc-d22']={
+        ...sourceUpdates20261013['doc-d22'],
+        ko:'10월26일 / 활성33메모 작업 분류 갱신: 사실/출처 반영18 / 변호사 판단10 / 외부대기5. #20 BIC 원본 채점표가 도착해 자료대기에서 충분성 검토로 이동 / 세부 항목 배점이나 법률 완료를 뜻하지 않음. 외부대기는 #16 유타 양측 서명 완료 계약 / #18 BIC 기관 확인서 / #31~33 Grace와 유선의3항목. 실제 체크리스트 담당자 팀63/본인5와 완료74/미완료68은 별개이며 이번에 변경하지 않음. 기존 CV 업로드 확인과 기술설명서/CCS 첨부 후속 상태 유지. Resolve/발송/서명 없음.',
+        en:'October26 /33 active-note working status:18 factual/source responses /10 counsel decisions /5 external waits. #20 BIC original score sheet received and moved to sufficiency review, not proof of item weights or legal completion. External waits: #16 fully executed Utah agreement, #18 BIC-issued confirmation, #31–33 three Grace/Yousun facts. Actual checklist Team63/Applicant5 and74 completed/68 open are separate and unchanged this pass. Prior CV upload verification and technical/CCS attachment follow-up retained. No Resolve/send/signature.',
+        nextKo:'Expedite / 10개 표현·출처 충분성 판단과 채택/번역/최종 레터 검토. 잼잼 / 5개 외부 자료 항목 후속 확보',
+        nextEn:'Expedite / Decide10 wording/source-sufficiency items and finalize evidence/translation/letters. Applicant / Follow5 external source items',
+        tagKo:'33메모 /18 반영 /10 판단 /5 대기',tagEn:'33 notes /18 reflected /10 decisions /5 waits',replaceAllParagraphs:true
+      };
       for(const [id,update] of Object.entries(sourceUpdates20261013)){
         const card=document.getElementById(id);
         const text=update.append?document.createElement('p'):card.querySelector('p');
