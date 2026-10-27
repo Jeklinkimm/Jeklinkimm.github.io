@@ -520,6 +520,14 @@
         nextEn:'Expedite / Decide10 wording/source-sufficiency items and finalize evidence/translation/letters. Applicant / Follow5 external source items',
         tagKo:'33메모 /18 반영 /10 판단 /5 대기',tagEn:'33 notes /18 reflected /10 decisions /5 waits',replaceAllParagraphs:true
       };
+      sourceUpdates20261013['wonjun-choi']={
+        ...sourceUpdates20261013['wonjun-choi'],
+        ko:sourceUpdates20261013['wonjun-choi'].ko+' 10월27일 / 본인이 제공한 보스 기획 담당자의 희소성 설명을 실제 초안에 추가하고 재접속 저장 확인. 개발 인력 전체와 구분하며 최상위 보스의 별도 인원수는 추정하지 않음. 새 희소성 수치는 원준 직접 확인 전의 제안 문안 / 기존 경력 회신과 구분.',
+        en:sourceUpdates20261013['wonjun-choi'].en+' October27 / Applicant-supplied boss-planner rarity added to the actual draft; persistence verified after reload. Planning scope is distinguished from all development staff; no separate end-game planner count invented. Newly proposed estimates await Wonjun’s review, distinct from his earlier career-history reply.',
+        nextKo:'Expedite / 희소성 문단 포함 최종 영문 검토. 잼잼 / 승인된 전문을 원준에게 확인 및 서명 요청 / 아직 요청 미발송',
+        nextEn:'Expedite / Final English review including rarity paragraph. GemGem / Obtain Wonjun’s review and signature on approved text / Request not sent',
+        tagKo:'희소성 초안 저장 / 최종 검토 및 서명 전',tagEn:'Rarity draft saved / Final review and signature pending'
+      };
       for(const [id,update] of Object.entries(sourceUpdates20261013)){
         const card=document.getElementById(id);
         const text=update.append?document.createElement('p'):card.querySelector('p');
