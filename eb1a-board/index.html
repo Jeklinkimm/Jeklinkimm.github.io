@@ -536,6 +536,14 @@
         nextEn:'GemGem / Access current developer consoles and obtain original metrics. Expedite / Review clarified responses and determine final evidence scope',
         tagKo:'제품 이용 지표 확인 중 / 콘솔 로그인 필요',tagEn:'Product adoption evidence in progress / Console login needed',replaceAllParagraphs:true
       };
+      sourceUpdates20261013['doc-d22']={
+        ...sourceUpdates20261013['doc-d22'],
+        ko:sourceUpdates20261013['doc-d22'].ko+' 10월27일14:24 / 본인 승인 후 개발리드에게 회사 Discord 새 스레드로 실제 요청 발송 및 멘션 확인. 출시일부터 현재까지 양쪽 스토어 통계 / 기간과 지표명이 보이는 원본 CSV나 캡처 / 가능하면 국가별 다운로드 요청. 현재 회신 대기 / 이용 아동 수는 별도 미확인.',
+        en:sourceUpdates20261013['doc-d22'].en+' October27 at14:24 KST / After applicant approval, request posted once in a new company Discord thread with the development lead actually mentioned. Requested launch-to-current metrics for both stores, original dated CSV/screenshots with metric names, and country downloads if available. Reply pending / Actual child-user count remains separately unverified.',
+        nextKo:'잼잼 / 개발리드 원본 통계 회신 대기 후 지표와 기간 대조. Expedite / 확보된 근거 검토와 최종 증거 범위 결정',
+        nextEn:'GemGem / Await development-lead source reports, then reconcile dates/metrics. Expedite / Review originals and determine final evidence scope',
+        tagKo:'통계 원본 요청 발송 / 개발리드 회신 대기',tagEn:'Source-statistics request sent / Awaiting development lead'
+      };
       for(const [id,update] of Object.entries(sourceUpdates20261013)){
         const card=document.getElementById(id);
         const text=update.append?document.createElement('p'):card.querySelector('p');
