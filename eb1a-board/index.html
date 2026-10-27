@@ -528,6 +528,14 @@
         nextEn:'Expedite / Final English review including rarity paragraph. GemGem / Obtain Wonjun’s review and signature on approved text / Request not sent',
         tagKo:'희소성 초안 저장 / 최종 검토 및 서명 전',tagEn:'Rarity draft saved / Final review and signature pending'
       };
+      sourceUpdates20261013['doc-d22']={
+        ...sourceUpdates20261013['doc-d22'],
+        ko:'10월27일 최신 / Joon 회신으로 #12는 TIPS 규모가 아닌 GemGem400 다운로드 / 실제 이용 아동 / 이용 국가의 근거 요청임을 정정. 공개 스토어에서는 Android 1천+만 확인되며 iOS 다운로드 수와 정확한 합계는 미확인. 현재 제품의 두 개발자 콘솔 로그인 후 전체 기간 원본 통계 확보 필요 / 다운로드를 아동 수로 환산하지 않음. 기존 18/10/5 분류는 10월26일 당시 작업 분류이며 새 #12 요청의 완료 수가 아님. 새 희소성 초안의 추천인 검토도 남아 있음. 외부 자료와 서명 대기 / 법률 Resolve 없음.',
+        en:'October27 latest / Joon clarified #12 requests GemGem400 downloads, actual child users and countries, not TIPS scale. Public Android listing shows only1K+; iOS download count and exact combined total remain unverified. Current developer-console logins needed for all-time source reports / Downloads are not child-user counts. Earlier18/10/5 classification is the October26 snapshot, not completion of this clarified request. Newly proposed rarity text also awaits referee review. External-source and signing work remains / No legal Resolve.',
+        nextKo:'잼잼 / 현재 제품 개발자 콘솔 로그인 및 원본 통계 확보. Expedite / 새 답변과 공개 자료를 검토하고 최종 증거 범위 결정',
+        nextEn:'GemGem / Access current developer consoles and obtain original metrics. Expedite / Review clarified responses and determine final evidence scope',
+        tagKo:'제품 이용 지표 확인 중 / 콘솔 로그인 필요',tagEn:'Product adoption evidence in progress / Console login needed',replaceAllParagraphs:true
+      };
       for(const [id,update] of Object.entries(sourceUpdates20261013)){
         const card=document.getElementById(id);
         const text=update.append?document.createElement('p'):card.querySelector('p');
