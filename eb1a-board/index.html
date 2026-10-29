@@ -544,6 +544,14 @@
         nextEn:'GemGem / Await development-lead source reports, then reconcile dates/metrics. Expedite / Review originals and determine final evidence scope',
         tagKo:'통계 원본 요청 발송 / 개발리드 회신 대기',tagEn:'Source-statistics request sent / Awaiting development lead'
       };
+      sourceUpdates20261013['doc-d02']={
+        ...sourceUpdates20261013['doc-d02'],
+        ko:'10월29일 / 본인이 저장한 공식 CBP I-94 원본 PDF를 Expedite의 해당 요청에 첨부. 원본 내용은 수정하지 않음. Travel History는 별도 기록으로 아직 미확보 / 요청 전체 완료나 현재 체류상태 확정을 뜻하지 않음. 공개 보드에는 원본 파일이나 개인 입국 이력 및 식별정보를 게시하지 않음.',
+        en:'October29 / Applicant-saved original CBP I-94 PDF attached to its Expedite request without altering the source. Travel History remains a separate record not yet obtained / This does not establish completion of the entire request or current immigration status. No original identity file, personal entry details or identifiers published here.',
+        nextKo:'Expedite / I-94 원본 검토 및 추가 출입국 기록 필요 범위 결정. 본인 / 필요한 경우 Travel History 별도 확보',
+        nextEn:'Expedite / Review I-94 original and decide additional record scope. Applicant / Obtain separate Travel History if required',
+        tagKo:'I-94 원본 첨부 / 추가 기록 범위 검토',tagEn:'I-94 original attached / Further scope review',replaceAllParagraphs:true
+      };
       for(const [id,update] of Object.entries(sourceUpdates20261013)){
         const card=document.getElementById(id);
         const text=update.append?document.createElement('p'):card.querySelector('p');
