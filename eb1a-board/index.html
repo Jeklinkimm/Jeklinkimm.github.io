@@ -745,6 +745,22 @@
         nextEn:'Expedite / Finalize letter mix/wording, translations and exhibit scope. Applicant / Prepare team-specified identity records and external institutional replies',
         tagKo:'사이트 To do26 / 본인4 / 팀22',tagEn:'Site To do26 / Applicant4 / Team22',replaceAllParagraphs:true
       };
+      sourceUpdates20261013['doc-d14']={
+        ...sourceUpdates20261013['doc-d14'],
+        ko:'11월1일 / 미국 설립증명서와 초기 이사회 결의서 2개 확보 및 Expedite Complete / 새로고침 유지. 설립일과 당시 미국 CEO 선임 근거이며 한국 대표직/지분이나 현재 good standing 증명이 아님. 별도 초기 이사 선임서는 로컬 확보 / 첨부 미확인. 설립 요청은 자동 검토 후 To do로 돌아와 실제 상태 유지 / 기존 한국 9쪽 등기/대표자 사업자등록증의 위치를 응답에 명시, 팀의 연결/충분성 검토 필요. 지분/조직도/회사평판 응답은 기존 자료와 대응. 새 한국 원본이나 서명 취득은 아님 / 은행 묶음 미공유.',
+        en:'November1 / US charter/certification and initial board action recovered and attached Complete; receipt persisted after reload. Supports incorporation and historical US CEO appointment, not Korean roles/ownership or current good standing. Separate director action local only, case receipt unverified. Incorporation request returned to To do after automated review; status retained honestly. Response locates existing later nine-page Korean registry and representative-naming business registration for team association/sufficiency review. Other ownership/org/reputation responses map existing sources. No new Korean certificate, signature or banking bundle shared.',
+        nextKo:'Expedite / 미국 설립/선임 원본과 한국 법인 자료를 구분해 최종 역할/증거 채택 검토. Codex / 별도 이사 선임서 첨부 보완',
+        nextEn:'Expedite / Review US formation/appointment originals separately from Korean entity evidence. Codex / Follow up separate director-action attachment',
+        tagKo:'미국 설립/선임 원본 2개 첨부',tagEn:'Two US formation/appointment originals attached'
+      };
+      sourceUpdates20261013['doc-d22']={
+        ...sourceUpdates20261013['doc-d22'],
+        ko:'11월1일 최신 / 전체142요청: Completed74 / Submitted41 / To do27. 미국 원본2개 첨부 후 설립 요청이 자동 검토에서 To do로 돌아온 실제 상태 반영 / 최신 한국 자료는 폴더에 있고 팀의 연결/충분성 검토 필요. To do27은 본인4 / Expedite23: 인증번역10, 최종 레터 범위12, 한국 법인 근거 재검토1. 본인4는 기첨부 여권 검토, 신원/가족 증명, 사진, BIC 기관 확인서 / 형식과 시점은 팀 지정 필요. 새파일27개 부족이나 활성33수동메모 Resolve 수가 아님. 서명/법률완료 자동 처리 안 함.',
+        en:'November1 latest / All142 requests:74 Completed /41 Submitted /27 To do. After two US originals were attached, incorporation returned to To do under automated review; actual status retained. Later Korean sources already exist in the folder for team association/sufficiency review. To do27:4 applicant /23 Expedite, comprising10 translations,12 final-letter scope requests and1 Korean-corporate evidence review. Applicant4: attached-passport review, identity/family records, photos and BIC confirmation; team must specify format/timing. Not27 new missing files or33 manual notes resolved. No automatic signing/legal completion.',
+        nextKo:'Expedite / 한국 법인 자료 대조, 최종 레터/번역/증거 채택 검토. Codex / 별도 이사 선임서 첨부 보완. 잼잼 / 지정 신원자료와 기관 회신',
+        nextEn:'Expedite / Review Korean corporate sources, final letters, translations and exhibits. Codex / Follow up separate director-action attachment. Applicant / Specified identity records and institutional replies',
+        tagKo:'사이트 To do27 / 본인4 / 팀23',tagEn:'Site To do27 / Applicant4 / Team23',replaceAllParagraphs:true
+      };
       for(const [id,update] of Object.entries(sourceUpdates20261013)){
         const card=document.getElementById(id);
         const text=update.append?document.createElement('p'):card.querySelector('p');
