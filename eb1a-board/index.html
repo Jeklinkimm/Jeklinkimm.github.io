@@ -150,11 +150,11 @@
           tagKo:'최신 PDF 확보 / 최종 검토',tagEn:'Latest PDF supplied / Final review'
         },
         'doc-d13':{
-          ko:'10월 14일 / 최종 B1 기준 기술 연결표 3쪽 PDF Expedite 업로드 / Complete와 재접속 확인. 기존 출원 보정서 기준 연결표의 최종 명세서 미확보 상태 대체. 유효 11청구항 / 정확한 공보 페이지 연결. 특허 LSTM/23동작과 논문 SVM/6영역 / 개인 설계와 개발팀 구현 / 임상 효과를 구분.',
-          en:'October 14 / Three-page final-B1 technical map uploaded to Expedite / Complete and reopening verified. Supersedes the filed-amendment map’s unlocated-final-specification status. Eleven active claims mapped to exact gazette pages. Separates patent LSTM/23-movement examples from study SVM/six domains, applicant design, developer implementation and clinical outcomes.',
-          nextKo:'Expedite / 최종 B1 연결표로 레터와 번역/증거 채택 검토. 잼잼 / 변호사가 사용할 정확한 구현 주장만 추가 확인 / 같은 명세서 재요청 안 함',
-          nextEn:'Expedite / Use final B1 map for letters, translation and exhibit review. GemGem / Confirm only exact implementation assertions counsel elects to use / No repeated specification request',
-          tagKo:'최종 B1 연결표 저장 / 법률 검토',tagEn:'Final B1 map supplied / Counsel review'
+          ko:'11월1일 / 비어 있던 실제 특허 요청에 기존 등록증과 최종 B1 공보의 위치 및 범위를 대응 / Submitted와 새로고침 후 전문 일치. 한국 특허는 등록 완료이며 유효 11청구항 / 8번 삭제. 주소와 인물 이미지를 가린 13쪽 공보 사본 및 기존 3쪽 연결표는 구분 / 연결표는 작업용이지 원본 증거가 아님. 특허 예시와 실제 연구 버전, 등록 사실과 분야 중요성을 구분. 해외 출원을 등록 완료로 확대하지 않음 / 중복 업로드 없음.',
+          en:'November1 / Previously blank patent request now maps the existing certificate and final B1 gazette; Submitted and exact-text reload verified. Korean patent granted, with eleven active claims and claim8 deleted. Privacy-redacted13-page source copy is distinct from the existing three-page working map, which is not an original exhibit. Patent examples are separated from studied implementation; grant alone does not prove field significance. Foreign filing records are not described as foreign grants / No duplicate upload.',
+          nextKo:'Expedite / 기존 등록 공보 채택과 전체 인증 번역 / 실제 구현 및 개인 기여 연결 검토 / 같은 명세서 재요청 안 함',
+          nextEn:'Expedite / Select granted source, arrange full certified translation and assess implementation/personal-role linkage / No repeated specification request',
+          tagKo:'특허 요청 응답 인계 / 번역과 연결 검토',tagEn:'Patent request handed off / Translation and linkage review'
         },
         'soohyun-bae':{
           ko:'10월 14일 실제 초안 정정 / CCS는 하루 사용 후 중단이며 지속 도입으로 쓰지 않음. 유타 13명 완료는 2025년 심사 당시 이미 제시된 결과처럼 묘사하지 않음. 사업 확장성과 동기/에너지 평가 유지 / 재접속 후 저장 확인. 새 추천인 승인이나 서명 완료는 아님.',
@@ -663,6 +663,11 @@
         ...sourceUpdates20261013['kunnan-park'],
         ko:sourceUpdates20261013['kunnan-park'].ko+' 11월1일 / 구글 공식 발표의 세 선정 요소를 실제 기준 요청에 연결. 활성 레터의 혜택 문단도 정부 원문에 맞춰 Top3 광고/영상, Top10 컨설팅/캠페인, 우수기업 이머전으로 교정 / 새로고침 전문 일치 / 수동 메모2개 유지. 컨설팅과 이머전을 Top3 전용으로 쓰지 않음.',
         en:sourceUpdates20261013['kunnan-park'].en+' November1 / Google official three-factor statement linked to actual criteria request. Active letter benefit paragraph corrected to Top3 ads/video, Top10 consulting/campaigns, excellent-company immersion / Exact text reload verified / Two manual notes retained. Consulting and immersion are not described as Top3-exclusive.'
+      };
+      sourceUpdates20261013['doc-d12']={
+        ...sourceUpdates20261013['doc-d12'],
+        ko:sourceUpdates20261013['doc-d12'].ko+' 같은 폴더의 임상 전문가 레터 요청에도 고은재/김용섭의 현재 초안과 출처를 대응 / Submitted와 새로고침 검증. 연구협력 관계를 완전한 외부 독립성으로 쓰지 않으며, 초안은 서명본이 아님 / 홍준택 백업 유지.',
+        en:sourceUpdates20261013['doc-d12'].en+' Clinical expert-letter request in the same folder also maps Ko/Kim working drafts and sources; Submitted and reload verified. Research collaboration is not presented as complete external independence; drafts are not signed letters / Hong remains backup.'
       };
       for(const [id,update] of Object.entries(sourceUpdates20261013)){
         const card=document.getElementById(id);
