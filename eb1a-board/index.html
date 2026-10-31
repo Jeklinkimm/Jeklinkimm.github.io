@@ -669,6 +669,14 @@
         ko:sourceUpdates20261013['doc-d12'].ko+' 같은 폴더의 임상 전문가 레터 요청에도 고은재/김용섭의 현재 초안과 출처를 대응 / Submitted와 새로고침 검증. 연구협력 관계를 완전한 외부 독립성으로 쓰지 않으며, 초안은 서명본이 아님 / 홍준택 백업 유지.',
         en:sourceUpdates20261013['doc-d12'].en+' Clinical expert-letter request in the same folder also maps Ko/Kim working drafts and sources; Submitted and reload verified. Research collaboration is not presented as complete external independence; drafts are not signed letters / Hong remains backup.'
       };
+      sourceUpdates20261013['doc-d11']={
+        ...sourceUpdates20261013['doc-d11'],
+        ko:'11월1일 / 실제 BIC 요청의 심사 범위 / 전문가 패널 / 행사 배경 3응답 저장, Submitted와 새로고침 후 전문 일치. 기존 7월 원본 채점표 머리글과 개인 20개 평가 확인, 8월 별도 특별 심사단 공식 명단, ALT-G 본선3/3과 예선8/14를 구분해 연결. 행사 위상 검토 제안에는 부산시 한국어 보도자료와 조직위 소개 원문 2링크를 직접 연결 / Captured. 아시아 최대급은 부산시의 당시 표현으로 귀속하며 독립 순위 검증이나 본인 심사 수로 확대하지 않음. 상세 배점과 일반 위촉 기준은 추정 안 함. 별도 BIC 기관 확인서와 최종 서명 레터는 미확보 / 해당 2요청 To do 유지. 법률 메모 Resolve 아님.',
+        en:'November1 / Three actual BIC responses submitted and exact-text reload verified: judging scope, expert panel and festival background. Maps July source-header/personal20 confirmation, separate August special-panel roster, and ALT-G final3/3 versus preliminary8/14. Two official links captured and directly connected for standing review: original Korean Busan City release and organizer introduction. Asia-largest wording is the city\'s dated characterization, not an independently audited rank or personal judging volume. Detailed weights and general appointment rules not invented. BIC-issued confirmation and final signed letter remain unreceived / Those two requests stay To do. Not legal-note Resolve.',
+        nextKo:'Expedite / 기존 원문과 실제 심사 범위의 충분성 및 번역 검토. 잼잼 / 기관 확인서 회신 추적 / 같은 채점표 재요청 안 함',
+        nextEn:'Expedite / Review original-source sufficiency, actual judging scope and translations. Applicant / Await institutional confirmation / No repeat scoring-sheet request',
+        tagKo:'BIC 3요청 인계 / 기관 확인서 별도 대기',tagEn:'Three BIC requests handed off / Institutional source pending',replaceAllParagraphs:true
+      };
       for(const [id,update] of Object.entries(sourceUpdates20261013)){
         const card=document.getElementById(id);
         const text=update.append?document.createElement('p'):card.querySelector('p');
