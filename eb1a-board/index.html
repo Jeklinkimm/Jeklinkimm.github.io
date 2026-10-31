@@ -722,6 +722,29 @@
         nextEn:'Expedite / Review final letters, translations and exhibit scope. Applicant/Codex / Continue source work on reputation/recognition; applicant obtains identity records after team specifies requirements',
         tagKo:'사이트 To do28 / 본인4 / 팀24',tagEn:'Site To do28 / Applicant4 / Team24',replaceAllParagraphs:true
       };
+      sourceUpdates20261013['doc-d14']={
+        ...sourceUpdates20261013['doc-d14'],
+        ko:sourceUpdates20261013['doc-d14'].ko+' 11월1일 후속 / 회사 평판 요청에 기존 임상/대학 자료와 매출 원본 위치를 대응하고 두 스토어 공식 링크 직접 연결 / Captured. 응답 Submitted와 새로고침 후 전문 일치. 연구협력을 병원 전체 보증으로, 가톨릭대 선행 논문을 정식 회사 제휴로 확대하지 않음. 자동 검토의 임상 근거 부재 의견은 기존 원문과 함께 팀에 인계.',
+        en:sourceUpdates20261013['doc-d14'].en+' November1 follow-up / Company-reputation request maps existing clinical/university sources and revenue originals; two official storefront links directly attached and captured. Response Submitted and exact-text reload verified. Research cooperation is not a blanket hospital endorsement; the Catholic predecessor thesis is not a formal company partnership. Automated clinical-source gap referred to the team with original-file pointers.',
+        nextKo:'Expedite / 기존 원문과 자동 검토 의견 대조, 회사 평판의 최종 근거/번역/레터 범위 결정',
+        nextEn:'Expedite / Reconcile originals and automated review; finalize reputation evidence, translations and letter scope',
+        tagKo:'회사 평판 응답 인계 / 원문 연결',tagEn:'Company reputation handed off / Sources linked'
+      };
+      sourceUpdates20261013['cartier-strategy']={
+        ...sourceUpdates20261013['cartier-strategy'],
+        ko:sourceUpdates20261013['cartier-strategy'].ko+' 외부인정 요청에 CNA/Tatler 발행사 원문과 출처 한계 추가 / Submitted 및 새로고침 전문 일치. CNA Captured, Tatler Link only / 전체 보기는 가입 요구여서 완전한 기사 캡처로 표시하지 않음. 두 보도는 같은 지역 수상의 인정이지 추가 수상이 아니며, 정확한 wire 대조와 독립성 판단은 팀 검토.',
+        en:sourceUpdates20261013['cartier-strategy'].en+' External-recognition response now maps CNA/Tatler publisher originals and source limits / Submitted and exact-text reload verified. CNA captured; Tatler link only, with full view registration-gated, not represented as a complete article capture. Two stories concern the same regional award, not additional wins; exact wire comparison and independence remain for team review.',
+        nextKo:'Expedite / 보도 원문 채택/보존과 중복/독립성, 수상/펠로십 최종 논리 검토',
+        nextEn:'Expedite / Select and preserve outlet originals; assess overlap/independence and final award/fellowship framing'
+      };
+      sourceUpdates20261013['doc-d22']={
+        ...sourceUpdates20261013['doc-d22'],
+        ko:'11월1일 / 전체142요청 최신 재집계: Completed74 / Submitted42 / To do26. 회사 평판과 Cartier 외부인정 2응답 추가 인계 / 새로고침 전문 일치. 별도 활성33수동메모의 법률 해결 수가 아님. To do26은 본인4 / Expedite22. 본인4는 기첨부 여권 검토, 신원/가족 증명, 사진, BIC 기관 확인서 / 형식과 시점은 팀 지정 필요. 팀22는 인증번역10과 최종 레터 범위12. 26개 새파일 부족이라는 뜻이 아님 / 통계 ZIP 필수 대기 제외 / 서명과 법률 Resolve 자동 처리 안 함.',
+        en:'November1 / Fresh all142 request count:74 Completed /42 Submitted /26 To do after company-reputation and Cartier-recognition handoffs, exact-text reload verified. Not legal resolution of33 separate active manual notes. To do26 comprises4 applicant /22 Expedite. Applicant items: review of attached passport, identity/family records, photographs and BIC institutional confirmation; team must specify format/timing. Team22 comprises10 certified-translation and12 final-letter scope requests. Not26 new missing files / Console ZIP retrieval remains excluded / No automatic signing or legal Resolve.',
+        nextKo:'Expedite / 최종 레터 조합/문안과 번역/증거 채택 범위 결정. 잼잼 / 팀 지정 신원자료와 외부 기관 회신 준비',
+        nextEn:'Expedite / Finalize letter mix/wording, translations and exhibit scope. Applicant / Prepare team-specified identity records and external institutional replies',
+        tagKo:'사이트 To do26 / 본인4 / 팀22',tagEn:'Site To do26 / Applicant4 / Team22',replaceAllParagraphs:true
+      };
       for(const [id,update] of Object.entries(sourceUpdates20261013)){
         const card=document.getElementById(id);
         const text=update.append?document.createElement('p'):card.querySelector('p');
