@@ -643,6 +643,27 @@
         en:sourceUpdates20261013['doc-d22'].en+' November1 / All13 letter pages reopened:33 active manual notes plus6 Hong-backup notes =39, matching the prior inventory. Automatic proposals are separate; stale source-availability premises must not be batch-applied. Six corporate/ownership/org/investor-status/CV/education request responses submitted and reload-verified / Not six legally resolved notes or six new documents.',
         titleKo:'D22 / 접수 패키지 / 담당별 후속',titleEn:'D22 / Filing package / Owner-specific follow-up'
       };
+      sourceUpdates20261013['doc-d05']={
+        ...sourceUpdates20261013['doc-d05'],
+        ko:'11월1일 / 기존 중기부 결과 PDF의 공식 게시 페이지를 실제 발표 요청에 직접 연결하고 응답 저장 / Submitted와 새로고침 후 전문 일치. 최우수상과 대상/단독2위 구분 유지 / 다른 수상 추가 아님. 심사위원 실명과 세부 배점은 미확인 / 추가 기관 문의 필요성은 팀 판단.',
+        en:'November1 / Direct ministry portal for the existing result PDF linked to the actual announcement request; response Submitted and exact-text reload verified. Top Excellence remains distinct from Grand Prize/unique second place / Not another award. Named jurors and detailed weights remain unverified / Team decides whether further organizer inquiry is essential.',
+        nextKo:'Expedite / 공식 포털과 원본 PDF 채택/번역 및 남은 세부자료 필요성 검토',
+        nextEn:'Expedite / Review official portal/PDF selection, translation and essential remaining detail',
+        tagKo:'공식 포털 요청 연결 / 팀 검토',tagEn:'Official portal linked to request / Team review',replaceAllParagraphs:true
+      };
+      sourceUpdates20261013['doc-d07']={
+        ...sourceUpdates20261013['doc-d07'],
+        ko:'11월1일 / 굿게임상 기준 요청에 공식 요강 게시처와 실제 재단 심사 규정을 연결 / 응답 Submitted 및 새로고침 검증. 본상 투표/기술·창작성 배점이나 실명 심사위원을 가져다 쓰지 않음. 별도 혁신성 배점과 심사위원 명단은 확인되지 않아 팀이 추가 문의 필요성 판단. 공식 수상표는 폴더에 Link only로 추가 / PDF나 기관 증서 확보와 구분.',
+        en:'November1 / Official guideline posting and actual Foundation-review scope mapped to the Good Game criteria request / Response Submitted and reload verified. Main-award voting/technical-creativity weights and juror roster are not imported. Separate innovation weighting and named judges remain unverified; team decides whether further inquiry is essential. Official winner table added at folder level as Link only, not a PDF or issued certificate.',
+        nextKo:'Expedite / 실제 부문 규정과 개인 기여 연결 검토 / 미공개 심사정보 추가 요청 필요성 결정',
+        nextEn:'Expedite / Review actual category rules and personal-role linkage; decide essential undisclosed-jury evidence',
+        tagKo:'공식 기준 요청 반영 / 세부 심사정보 검토',tagEn:'Official criteria response submitted / Jury-detail review',replaceAllParagraphs:true
+      };
+      sourceUpdates20261013['kunnan-park']={
+        ...sourceUpdates20261013['kunnan-park'],
+        ko:sourceUpdates20261013['kunnan-park'].ko+' 11월1일 / 구글 공식 발표의 세 선정 요소를 실제 기준 요청에 연결. 활성 레터의 혜택 문단도 정부 원문에 맞춰 Top3 광고/영상, Top10 컨설팅/캠페인, 우수기업 이머전으로 교정 / 새로고침 전문 일치 / 수동 메모2개 유지. 컨설팅과 이머전을 Top3 전용으로 쓰지 않음.',
+        en:sourceUpdates20261013['kunnan-park'].en+' November1 / Google official three-factor statement linked to actual criteria request. Active letter benefit paragraph corrected to Top3 ads/video, Top10 consulting/campaigns, excellent-company immersion / Exact text reload verified / Two manual notes retained. Consulting and immersion are not described as Top3-exclusive.'
+      };
       for(const [id,update] of Object.entries(sourceUpdates20261013)){
         const card=document.getElementById(id);
         const text=update.append?document.createElement('p'):card.querySelector('p');
