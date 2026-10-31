@@ -576,6 +576,22 @@
         nextEn:'Expedite / Decide whether to use or omit sender-reported metrics and review remaining legal notes. Applicant / No ZIP-retrieval task',
         tagKo:'회신 반영 / ZIP 대기 제외 / 팀 검토',tagEn:'Reply recorded / ZIP wait removed / Team review',replaceAllParagraphs:true
       };
+      sourceUpdates20261013['doc-d12']={
+        ...sourceUpdates20261013['doc-d12'],
+        ko:'10월31일 / 임상 분모와 기여 귀속을 정리한 최신4쪽 기술설명서 PDF를 Expedite에 첨부하고 실제 기술설명서 요청에 연결. Complete 및 새로고침 후 유지 확인. 48명 배정/45명 분석과 중재군 평균 순응도, 본인 설계/개발팀 구현/임상팀 평가 구분 유지. 본인 역할 확인은 완료 / PDF는 작성 지원을 받은 미서명 검토용 종합문서이며 원본 증거 또는 최종 진술서가 아님. 기존 버전과 1차 자료 보존.',
+        en:'October31 / Latest four-page clinically aligned technical PDF attached and linked to the actual technical-description request in Expedite. Complete and persistence verified after reload. Preserves48 randomized/45 analyzed, intervention-group adherence and applicant/developer/clinical roles. Applicant role scope confirmed; assisted unsigned working synthesis, not original evidence or final declaration. Prior versions and primary sources preserved.',
+        nextKo:'Expedite / 원본 자료와 대조해 기술 주장/귀속/최종 문안 및 서명 형식 결정. 잼잼 / 확정된 최종본 검토만',
+        nextEn:'Expedite / Check primary sources, attribution, final wording and signing format. Applicant / Review finalized text only',
+        tagKo:'최신 PDF 첨부 / 미서명 / 팀 검토',tagEn:'Latest PDF attached / Unsigned / Team review',replaceAllParagraphs:true
+      };
+      sourceUpdates20261013['doc-d18']={
+        ...sourceUpdates20261013['doc-d18'],
+        ko:'10월31일 / 본인이 CCS 데모 사진이라고 확인한 기존 맥의 JPEG를 수정 없이 Expedite에 첨부. Complete 및 새로고침 후 유지 확인 / 파일 설명에 출처와 한계 기록. PPT 추출본이지 촬영 원본/촬영일 독립 인증이 아님. 기존 이메일과 하루 사용 후 중단 범위 유지 / 임상 효능, 계약 또는 장기 도입으로 확대하지 않음. 사진은 공개 보드에 올리지 않음.',
+        en:'October31 / Existing Mac JPEG identified by applicant as the CCS demonstration attached unchanged in Expedite. Complete and persistence verified after reload; source/limits recorded in file details. PowerPoint extract, not authenticated camera original/date. Existing emails and one-day use then discontinued scope retained / No efficacy, contract or sustained-adoption inference. Photo not published here.',
+        nextKo:'Expedite / 데모 사진과 당시 이메일의 채택 범위 검토 / 본인에게 폰 사진이나 없던 PoC 보고서 재요청 불필요',
+        nextEn:'Expedite / Review demo photo with contemporaneous emails / No repeated phone-photo or nonexistent PoC-report request',
+        tagKo:'데모 사진 첨부 확인 / 증거 범위 검토',tagEn:'Demo photo attached / Evidence-scope review',replaceAllParagraphs:true
+      };
       for(const [id,update] of Object.entries(sourceUpdates20261013)){
         const card=document.getElementById(id);
         const text=update.append?document.createElement('p'):card.querySelector('p');
