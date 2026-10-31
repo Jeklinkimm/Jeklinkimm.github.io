@@ -592,6 +592,30 @@
         nextEn:'Expedite / Review demo photo with contemporaneous emails / No repeated phone-photo or nonexistent PoC-report request',
         tagKo:'데모 사진 첨부 확인 / 증거 범위 검토',tagEn:'Demo photo attached / Evidence-scope review',replaceAllParagraphs:true
       };
+      sourceUpdates20261013['doc-d09']={
+        ...sourceUpdates20261013['doc-d09'],
+        ko:'11월1일 / 실제 기사에서 강진희 바이라인과 날짜를 다시 확인해 저자 확인 요청에 원문 링크와 답변 저장 / Submitted 및 새로고침 후 유지 확인. 같은 기사 캡처를 별도 출판으로 세지 않음. 개인 영문 이름은 확정하지 않음 / 정확한 독자 수는 미확인 / 번역과 매체 위상은 팀 검토.',
+        en:'November1 / Visible Korean byline and date rechecked on the publisher article; source link and author-identification response saved to the actual request / Submitted and reload verified. Same-article captures are not additional publications. Personal English spelling and precise readership remain unverified / Translation and outlet standing require team review.',
+        nextKo:'Expedite / 연결된 바이라인 근거 검토 및 매체 위상/번역 범위 결정',
+        nextEn:'Expedite / Review linked byline evidence and determine outlet-standing/translation scope',
+        tagKo:'저자 요청 답변 저장 / 팀 검토',tagEn:'Byline response submitted / Team review',replaceAllParagraphs:true
+      };
+      sourceUpdates20261013['doc-d12']={
+        ...sourceUpdates20261013['doc-d12'],
+        ko:'11월1일 / 본인이 제품/반복 참여 설계와 개발팀 구현 구분을 검토. 세 연구의 공통 기반과 최신 세브란스의 게임형 평가/평가 기반 자동 배정 개선 지시 역할을 Expedite에 반영. 연구/분석 완료는 본인 확인 / 연구원 메일 출처는 참여자 첨부를 뺀 사본으로 보존. KBS 교수 인터뷰 캡처 첨부 / 전체 기존 PDF 채택이나 서명 완료는 아님. 세션 중 실시간 자율 난이도 조절로 확대하지 않음.',
+        en:'November1 / Applicant reviewed personal product/repeat-participation design versus developer implementation. Shared study core and her direction of game-form assessment/assessment-based allocation in the latest Severance version recorded in Expedite. Study/analysis completion is applicant-confirmed; investigator email supplied as an attachment-omitted source copy. KBS professor-interview frames attached / Not adoption or signing of the entire older PDF. No continuous autonomous adaptation inferred.',
+        nextKo:'Expedite / 검토된 설명과 출처로 기술설명서 최종 문안/귀속/서명 형식 결정',
+        nextEn:'Expedite / Finalize technical wording, attribution and signing format against the reviewed account and sources',
+        tagKo:'본인 설명 검토 / 출처 첨부 / 최종화',tagEn:'Personal account reviewed / Sources attached / Finalization',replaceAllParagraphs:true
+      };
+      sourceUpdates20261013['doc-d18']={
+        ...sourceUpdates20261013['doc-d18'],
+        ko:'11월1일 / CCS 데모 사진과 당시 이메일 및 하루 사용 후 중단 사실은 보존. 본인 요청으로 긍정적 현장 피드백의 중심은 KBS 김용섭 교수 인터뷰로 변경 / 캡처2장 Expedite 첨부. 연구협력자의 보호자 피드백 회고이지 독립적 임상 효능 검증이나 시장 전체 도입 근거는 아님. 영상/사진은 공개 보드에 게시하지 않음.',
+        en:'November1 / CCS photo, contemporaneous emails and one-day use followed by discontinuation retained. At applicant request, KBS Professor Kim interview is now the principal positive field-feedback example / Two frames attached in Expedite. Research collaborator’s account of parental feedback, not independent efficacy validation or market-wide adoption. No video/images published here.',
+        nextKo:'Expedite / KBS 피드백과 CCS의 제한된 사실 범위에 맞춰 서술 최종화',
+        nextEn:'Expedite / Finalize narrative within the respective KBS-feedback and limited CCS source scope',
+        tagKo:'KBS 피드백 첨부 / CCS 사실 보존',tagEn:'KBS feedback attached / CCS history retained',replaceAllParagraphs:true
+      };
       for(const [id,update] of Object.entries(sourceUpdates20261013)){
         const card=document.getElementById(id);
         const text=update.append?document.createElement('p'):card.querySelector('p');
