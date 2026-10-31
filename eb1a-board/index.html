@@ -616,6 +616,27 @@
         nextEn:'Expedite / Finalize narrative within the respective KBS-feedback and limited CCS source scope',
         tagKo:'KBS 피드백 첨부 / CCS 사실 보존',tagEn:'KBS feedback attached / CCS history retained',replaceAllParagraphs:true
       };
+      sourceUpdates20261013['doc-d14']={
+        ...sourceUpdates20261013['doc-d14'],
+        ko:'11월1일 / 기존 최신 등기 열람본/주주명부/조직도와 대표자 명시 사업자등록증을 실제 요청 답변에 대응. 법인/지분/조직도 요청은 Submitted 및 새로고침 후 전문 일치. 직접 연결된 과거 자료와 폴더의 최신 자료를 구분 / 중복 원본 업로드 없음. 등기 열람본은 정식 발급 증명서가 아니며 지분과 대표직은 별개 / 추가 발급 필요성은 팀 판단.',
+        en:'November1 / Existing later registry viewing copy, shareholder register, organization chart and business-registration representative entry mapped in actual request responses. Corporate/ownership/org requests Submitted and exact responses reload-verified. Historical direct attachments distinguished from later folder sources / No duplicate original upload. Viewing copy is not an issued certificate; ownership is not appointment / Team decides whether refreshed evidence is essential.',
+        nextKo:'Expedite / 기존 자료 연결과 정식 등기/선임 증빙 필요 여부 및 최종 형식 결정',
+        nextEn:'Expedite / Reconcile source mapping and decide issued-registry/appointment evidence and final format',
+        tagKo:'요청 답변 인계 / 최신 근거 대응',tagEn:'Request responses handed off / Sources mapped',replaceAllParagraphs:true
+      };
+      sourceUpdates20261013['cv-working-review']={
+        ...sourceUpdates20261013['cv-working-review'],
+        ko:sourceUpdates20261013['cv-working-review'].ko+' 11월1일 / 실제 CV 요청에 기존 Midea 산학 UX 경력과 이전 미디어회사 표현의 차이를 설명 / 학력 요청에도 공식 영문 졸업증명서와 별도 성적증명서 범위를 대응. 두 응답 Submitted 및 새로고침 후 전문 일치 / 없는 경력이나 증명서 추가 안 함.',
+        en:sourceUpdates20261013['cv-working-review'].en+' November1 / Actual CV request now explains existing Midea industry-academic UX work versus obsolete media-company wording. Education request maps official English graduation source separately from an unsupplied transcript. Both responses Submitted and exact-text reload verified / No invented job or certificate.',
+        nextKo:'Expedite / 기존 CV 문구와 학력 원본을 검토 / 성적증명서 등 추가 필요 범위만 지정',
+        nextEn:'Expedite / Review existing CV wording and education original; specify only essential additional evidence',
+        tagKo:'CV/학력 응답 저장 / 팀 검토',tagEn:'CV/education responses submitted / Team review'
+      };
+      sourceUpdates20261013['letter-mix']={
+        ...sourceUpdates20261013['letter-mix'],
+        ko:sourceUpdates20261013['letter-mix'].ko+' 11월1일 / 실제 투자자 레터 요청에도 보고서는 추천서가 아님을 명시하고 두 작업 초안으로 인계. 현재 두 레터 Drafting / Not sent, 서명본 미확보 / 새 추천인 문의나 서명 요청 없음.',
+        en:sourceUpdates20261013['letter-mix'].en+' November1 / Actual investor-letter request distinguishes the background report from a recommendation and points to the two working drafts. Both remain Drafting / Not sent; signed letters not supplied / No new referee or signing request.'
+      };
       for(const [id,update] of Object.entries(sourceUpdates20261013)){
         const card=document.getElementById(id);
         const text=update.append?document.createElement('p'):card.querySelector('p');
