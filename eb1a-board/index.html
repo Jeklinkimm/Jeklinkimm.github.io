@@ -763,6 +763,14 @@
         nextEn:'Expedite / Review Korean corporate sources, final letters, translations and exhibits. Codex / Follow up separate director-action attachment. Applicant / Specified identity records and institutional replies',
         tagKo:'사이트 To do26 / 본인3 / 팀23',tagEn:'Site To do26 / Applicant3 / Team23',replaceAllParagraphs:true
       };
+      sourceUpdates20261013['letter-mix']={
+        ...sourceUpdates20261013['letter-mix'],
+        ko:'추천서 9건 / 법률팀 검토 후 개별 서명 링크 준비. 확인 대기 2건과 백업 2건.',
+        en:'Nine letters cleared by the legal team with individual signing links ready. Two on hold and two backups.',
+        nextKo:'담당 / 본인이 추천인별 전달. 추천인이 검토 및 서명.',
+        nextEn:'Owner / Applicant sends to each recommender. Recommenders review and sign.',
+        tagKo:'9건 / 추천인 전달 및 서명 단계',tagEn:'Nine letters / Distribution and signing',replaceAllParagraphs:true
+      };
       for(const [id,update] of Object.entries(sourceUpdates20261013)){
         const card=document.getElementById(id);
         const text=update.append?document.createElement('p'):card.querySelector('p');
