@@ -771,6 +771,22 @@
         nextEn:'Owner / Applicant sends to each recommender. Recommenders review and sign.',
         tagKo:'9건 / 추천인 전달 및 서명 단계',tagEn:'Nine letters / Distribution and signing',replaceAllParagraphs:true
       };
+      sourceUpdates20261013['letter-mix']={
+        ...sourceUpdates20261013['letter-mix'],
+        ko:'추천서 9건 개별 전달 및 서명 단계 유지. 추가 증거 반영 범위에 대한 법률팀 확인 질문 수신 / 본인 답변 대기.',
+        en:'Nine letters remain in distribution and signing. Counsel requested clarification on additional evidence scope / Applicant response pending.',
+        nextKo:'본인 / 요청 의도 확인. Expedite / 증거 반영 범위 판단. 추천인 / 검토 및 서명.',
+        nextEn:'Applicant / Clarify intent. Expedite / Determine evidence scope. Recommenders / Review and sign.',
+        tagKo:'새 확인 질문 / 본인 답변 대기',tagEn:'Clarification requested / Applicant response pending',replaceAllParagraphs:true
+      };
+      sourceUpdates20261013['doc-d13']={
+        ...sourceUpdates20261013['doc-d13'],
+        ko:'최신 특허 상태 회신 원문 2건 확보 및 비공개 케이스 첨부 확인. 등록특허와 별도 출원의 심사 및 접수증 수령 상태를 구분.',
+        en:'Two current patent-status source replies obtained and verified in the private case. Granted patent and separate applications, examination and receipt status remain distinct.',
+        nextKo:'외부 담당 / 접수증 확인. Expedite / 포트폴리오 문안 및 번역 검토.',
+        nextEn:'External custodian / Check filing receipts. Expedite / Review portfolio wording and translations.',
+        tagKo:'원문 확보 / 외부 확인 및 법률팀 검토',tagEn:'Sources obtained / External confirmation and counsel review',replaceAllParagraphs:true
+      };
       for(const [id,update] of Object.entries(sourceUpdates20261013)){
         const card=document.getElementById(id);
         const text=update.append?document.createElement('p'):card.querySelector('p');
