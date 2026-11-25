@@ -787,6 +787,30 @@
         nextEn:'External custodian / Check the remaining receipt. Expedite / Review received source, portfolio wording and translations.',
         tagKo:'접수증 추가 확보 / 법률팀 검토',tagEn:'Additional receipt obtained / Counsel review',replaceAllParagraphs:true
       };
+      sourceUpdates20261013['letter-mix']={
+        ...sourceUpdates20261013['letter-mix'],
+        ko:'이번 전달 대상 8건의 개별 이메일 초안과 참고본 준비 및 임시보관 검증 완료. 추가 후보는 요청 전이며 기존 보류와 백업은 유지.',
+        en:'Eight individual email drafts and reference copies are prepared and verified in Drafts. An additional candidate has not yet been asked; existing holds and backups remain.',
+        nextKo:'본인 / 초안 검토 및 발송 결정. 추천인 / 전달 후 검토와 서명. Expedite / 추가 후보 동의 후 문안 작성.',
+        nextEn:'Applicant / Review drafts and decide on sending. Recommenders / Review and sign after delivery. Expedite / Draft after additional consent.',
+        tagKo:'8건 초안 검증 / 미발송',tagEn:'Eight drafts verified / Not sent',replaceAllParagraphs:true
+      };
+      sourceUpdates20261013['doc-d22']={
+        ...sourceUpdates20261013['doc-d22'],
+        ko:'이번 추가 원문과 검토 색인을 비공개 케이스에 반영하고 재조회 검증 완료. 기존 확보 자료는 재요청하지 않음. 법률팀의 증거 채택, 번역과 최종 문안 검토가 남음.',
+        en:'Additional originals and a working source index are reflected and reload-verified in the private case. Obtained sources are not requested again. Counsel retains exhibit selection, translation and final wording review.',
+        nextKo:'Expedite / 증거 검토 및 번역, 접수 준비 판단. 본인 / 준비된 연락 초안 검토. 외부 담당 / 미수령 사실 회신.',
+        nextEn:'Expedite / Review evidence, translate and assess filing readiness. Applicant / Review prepared outreach drafts. External custodians / Outstanding factual replies.',
+        tagKo:'추가자료 반영 검증 / 팀 검토',tagEn:'Additional sources verified / Team review',replaceAllParagraphs:true
+      };
+      sourceUpdates20261013['yujin-joe']={
+        ...sourceUpdates20261013['yujin-joe'],
+        ko:'기존 제품 지표 회신과 국가별 자료 제공 안내를 재확인해 케이스 기록 정정. 플랫폼 지표와 실제 이용 아동 수를 구분하며 동일 자료 재요청 없음.',
+        en:'The received product-metric reply and notice of country-level attachments were rechecked and the case record corrected. Platform metrics remain distinct from actual child users; no duplicate source request.',
+        nextKo:'Expedite / 기존 출처 범위에 맞춰 수치 또는 좁힌 문안 채택 판단. 추천인 / 최종 문안 검토.',
+        nextEn:'Expedite / Decide on source-qualified figures or narrower wording. Recommender / Review final text.',
+        tagKo:'기존 회신 확인 / 팀 문안 검토',tagEn:'Existing reply confirmed / Team wording review',replaceAllParagraphs:true
+      };
       for(const [id,update] of Object.entries(sourceUpdates20261013)){
         const card=document.getElementById(id);
         const text=update.append?document.createElement('p'):card.querySelector('p');
