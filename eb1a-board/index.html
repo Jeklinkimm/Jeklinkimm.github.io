@@ -811,6 +811,14 @@
         nextEn:'Expedite / Decide on source-qualified figures or narrower wording. Recommender / Review final text.',
         tagKo:'기존 회신 확인 / 팀 문안 검토',tagEn:'Existing reply confirmed / Team wording review',replaceAllParagraphs:true
       };
+      sourceUpdates20261013['soohyun-bae']={
+        ...sourceUpdates20261013['soohyun-bae'],
+        ko:'추천인의 현재 직위 정정 요청 원문을 비공개 케이스에 반영하고 재조회 검증. 서명 전 소개와 서명란 수정 및 추천인 재검토 필요.',
+        en:'The referee\'s current-position correction was reflected and reload-verified in the private case. Introduction and signature block need revision before referee review and signing.',
+        nextKo:'Expedite / 문안과 서명란 및 링크 사용 절차 확인. 추천인 / 수정 후 검토와 서명.',
+        nextEn:'Expedite / Correct wording and signature block and confirm link procedure. Referee / Review and sign after correction.',
+        tagKo:'정정 요청 반영 / 팀 수정 필요',tagEn:'Correction source reflected / Team revision needed',replaceAllParagraphs:true
+      };
       for(const [id,update] of Object.entries(sourceUpdates20261013)){
         const card=document.getElementById(id);
         const text=update.append?document.createElement('p'):card.querySelector('p');
