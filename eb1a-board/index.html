@@ -819,6 +819,30 @@
         nextEn:'Expedite / Correct wording and signature block and confirm link procedure. Referee / Review and sign after correction.',
         tagKo:'정정 요청 반영 / 팀 수정 필요',tagEn:'Correction source reflected / Team revision needed',replaceAllParagraphs:true
       };
+      sourceUpdates20261013['yongseop-kim']={
+        ...sourceUpdates20261013['yongseop-kim'],
+        ko:'추천서 서명 완료를 원본 알림과 케이스에서 대조. 관련 지원 자료와 설명 저장 및 재조회 검증 완료. 법률 검토와 최종 증거 채택은 팀 담당.',
+        en:'Reference signature confirmed against the original notice and live case. Supporting sources and explanation saved and reload-verified. Counsel retains legal review and final exhibit selection.',
+        nextKo:'Expedite / 서명본과 기존 검토 메모를 대조해 최종 채택 판단.',
+        nextEn:'Expedite / Review the signed letter and existing notes for final inclusion.',
+        tagKo:'서명 완료 / 팀 최종 검토',tagEn:'Signed / Counsel review',replaceAllParagraphs:true
+      };
+      sourceUpdates20261013['kuhui-jeong']={
+        ...sourceUpdates20261013['kuhui-jeong'],
+        ko:'추천서 서명 완료를 원본 알림과 케이스에서 대조하고 지원 자료 저장 검증. 별도 기관 확인서는 계속 외부 회신 대기이며 추천서 서명과 구분.',
+        en:'Reference signature checked against the original notice and live case, with supporting-source save verified. Separate institutional confirmation remains an external wait.',
+        nextKo:'Expedite / 서명본 최종 검토. 외부 담당 / 별도 기관 확인서 회신.',
+        nextEn:'Expedite / Review the signed letter. External custodian / Separate institutional confirmation.',
+        tagKo:'서명 완료 / 기관 확인 별도 대기',tagEn:'Signed / Separate institutional confirmation pending',replaceAllParagraphs:true
+      };
+      sourceUpdates20261013['letter-mix']={
+        ...sourceUpdates20261013['letter-mix'],
+        ko:'추천서 2건 서명 완료를 원본 알림과 케이스에서 확인. 나머지 전달, 문안 정정과 레터헤드 절차는 기존 담당과 보류 조건에 따라 계속 추적.',
+        en:'Two reference signatures verified against original notices and the live case. Remaining distribution, corrections and letterhead steps retain their existing owners and holds.',
+        nextKo:'Expedite / 정정과 레터헤드 안내 및 서명본 검토. 본인 / 기존 발신 대조 후 남은 전달 결정.',
+        nextEn:'Expedite / Corrections, letterhead guidance and signed-letter review. Applicant / Reconcile prior sends before remaining distribution.',
+        tagKo:'2건 서명 완료 / 나머지 추적',tagEn:'Two signed / Remaining items tracked',replaceAllParagraphs:true
+      };
       for(const [id,update] of Object.entries(sourceUpdates20261013)){
         const card=document.getElementById(id);
         const text=update.append?document.createElement('p'):card.querySelector('p');
